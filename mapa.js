@@ -29,7 +29,17 @@ let reci_sr =
     razliciteLozinke: "Lozinke se ne poklapaju",
     naslov_register: "Molimo, registrujte se na sistem",
     greskaULog: "Pogresna lozinka ili korisnicko ime!",
-    naslov_moj_nalog: "Moji recepti"
+    naslov_moj_nalog: "Moji recepti",
+    naslov_dodajRecept : "Dodajte Recept",
+    naslov: "Naziv jela:",
+    duzina: "Duzina pripreme:",
+    grupa: "Vrsta jela:",
+    tezina: "Tezina pripremanja (1-5):",
+    opis: "Opis pripreme:",
+    dodajButton: "Dodaj Recept!",
+    video: "Dodajte link videa (opciono):",
+    logujte_se: "Morate prvo biti logovani!",
+    uspesno_dodat: "Recept uspesno dodat!"
 };
 let reci_en = 
 {
@@ -62,7 +72,17 @@ let reci_en =
     razliciteLozinke: "Passwords don't match",
     naslov_register: "Please, register",
     greskaULog: "Bad username or password!",
-    naslov_moj_nalog: "My recipes"
+    naslov_moj_nalog: "My recipes",
+    naslov_dodajRecept: "Add a recipe",
+    naslov: "Title of the dish:",
+    duzina: "Length of preparation:",
+    grupa: "Type of dish:",
+    tezina: "Difficulty of preparation (1-5):",
+    opis: "Description:",
+    dodajButton: "Add the recipe!",
+    video: "Add video url (optional):",
+    logujte_se: "Please log in first!",
+    uspesno_dodat: "Recipe succesfully added!"
 }
 
 let reci=null;

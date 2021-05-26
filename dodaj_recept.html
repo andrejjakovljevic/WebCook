@@ -50,7 +50,7 @@
               </ul>
             </li>
             <li class="nav-item">
-              <a class="nav-link text" id="dodaj_recept" href="dodaj_recept.html"></a>
+              <a class="nav-link text" id="dodaj_recept" href="#"></a>
             </li>
             <li class="nav-item">
               <a class="nav-link text" id="moj_nalog" href="moj_nalog.html"></a>
@@ -78,39 +78,61 @@
     <div class="container">
         <div class="row">
             <div class="col-12" style="text-align: center;">
-              <h1 class="text color_text1" id="naslov_register"></h1><hr style="border: 2px solid black;">
+              <h1 class="text color_text1" id="naslov_dodajRecept"></h1><hr style="border: 2px solid black;">
             </div>
         </div>
         <div class="row">
             <div class="col-12" style="text-align: center; color: red;" id="greska">
-                
+                &nbsp;
             </div>
         </div>
-        <div class="row" style="margin-top: 20px;">
-            <div class="col-6" style="margin: auto;">
+        <div class="row">
+            <div class="col-12" style="margin: auto;">
                 <table class="table table-striped">
                     <tr>
-                        <td class="text" id="mejl"></td>
-                        <td><input type="text" name="mejl"></td>
+                        <td class="text" id="naslov"></td>
+                        <td><input type="text" name="naslov_t"></td>
                     </tr>
                     <tr>
-                        <td class="text" id="korisnicko"></td>
-                        <td><input type="text" name="korIme"></td>
+                        <td class="text" id="duzina"></td>
+                        <td><input type="text" name="duzina_t"></td>
                     </tr>
                     <tr>
-                        <td class="text" id="lozinka"></td>
-                        <td><input type="password" name="pass"></td>
+                        <td class="text" id="grupa"></td>
+                        <td>
+                            <select name="grupa_t" id="grupa_t">
+                                <option class="text" id="predjelo"></option>
+                                <option class="text" id="glavno_jelo"></option>
+                                <option class="text" id="desert"></option>
+                                <option class="text" id="uzina"></option>
+                            </select>
+                        </td>
                     </tr>
                     <tr>
-                        <td class="text" id="ponlozinka"></td>
-                        <td><input type="password" name="ponpass"></td>
+                        <td class="text" id="tezina"></td>
+                        <td>
+                            <input type="number" name="tezina_t" min="1" max="5">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="text" id="opis"></td>
+                        <td><textarea name="opis_t" rows="10" cols="50"></textarea></td>
+                    </tr>
+                    <tr>
+                        <td class="text" id="video"></td>
+                        <td><input type="text" name="video_t"></td>
                     </tr>
                     <tr>
                         <td colspan="2">
-                            <button class="btn color_primary color_text2 text" id="regbutton"></button>
+                            <button class="btn color_primary color_text2 text" id="dodajButton"></button>
                         </td>
                     </tr>
                 </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-success" style="text-align: center;" id="uspeh">
+                &nbsp;
             </div>
         </div>
     </div>
@@ -120,39 +142,49 @@
     {
         setupLanguage();
 
-        $("#regbutton").click(function()
+        if (localStorage.getItem('korisnik')==null)
         {
-            let mejl = $("input[name=mejl]").val();
-            let korIme = $("input[name=korIme]").val();
-            let pass = $("input[name=pass]").val();
-            let ponpass = $("input[name=ponpass]").val();
-            if (mejl=="" || korIme=="" || pass=="" || ponpass=="")
+          localStorage.setItem('error',true);
+          window.open('login.html',"_self");
+        }
+        $("#uspeh").text("");
+        $("#dodajButton").click(function()
+        {
+            let naslov = $("input[name=naslov_t]").val();
+            let duzina = $("input[name=duzina_t]").val();
+            let grupa = $("select[name=grupa_t]").val();
+            if (grupa==reci["predjelo"]) grupa=1;
+            else if (grupa==reci["glavno_jelo"]) grupa=2;
+            else if (grupa==reci["desert"]) grupa=3;
+            else if (grupa==reci["uzina"]) grupa=4;
+            let opis = $("textarea[name=opis_t]").val();
+            let url = $("input[name=video_t]").val();
+            if (naslov=="" || duzina=="" || opis=="")
             {
                 $("#greska").text(reci['unesiteSve']);
+                $("#uspeh").text("");
                 return;
             }
-            if (!/\w+@\w+/.test(mejl))
+            let niz_recepata=[];
+            if (localStorage.getItem('niz_recepata')==null)
             {
-                $("#greska").text(reci['losMejl']);
-                return;
+                localStorage.setItem('niz_recepata',JSON.stringify(niz_recepata));
             }
-            if (localStorage.getItem(korIme)!=null)
+            niz_recepata = JSON.parse(localStorage.getItem('niz_recepata'));
+            let recept = 
             {
-                $("#greska").text(reci['korPostoji']);
-                return;
+                "naslov" : naslov,
+                "duzina" : duzina,
+                "grupa" : grupa,
+                "opis" : opis,
+                "url" : url,
+                "autor" : localStorage.getItem('korisnik'),
+                "komentari" : [],
+                "slike" : []
             }
-            if (!/[A-Z]/.test(pass) || !/[a-z]/.test(pass) || !/[0-9]/.test(pass))
-            {
-                $("#greska").text(reci['losOblikLozinke']);
-                return;
-            }
-            if (pass!=ponpass)
-            {
-                $("#greska").text(reci['razliciteLozinke']);
-                return;
-            }
-            localStorage.setItem(korIme,pass);
-            window.open("moj_nalog.html","_self");
+            niz_recepata.push(recept);
+            localStorage.setItem('niz_recepata',JSON.stringify(niz_recepata));
+            $("#uspeh").text(reci["uspesno_dodat"]);
         })
     })
 </script>

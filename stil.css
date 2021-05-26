@@ -30,6 +30,7 @@
     padding-left: 30px;
     font-size: 150%;
     color: #EFF2C0;
+    font-family: Rage;
 }
 
 .nav-link
@@ -46,6 +47,7 @@
 {
     color: #EFF2C0;
     font-size: 20px;
+    font-family: Rage;
 }
 
 .dropdown-menu a:hover
@@ -66,4 +68,9 @@
     text-align: left;
     height: 25px;
     font-weight: bold;
+}
+
+.jumbotron
+{
+    font-family: Rage;
 }
