@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="colors.css">
+    <link rel="stylesheet" href="stil.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="mapa.js"></script>
+</head>
+<style>
+    td
+    {
+        text-align: center;
+        font-weight: bold;
+    }
+    a:hover
+    {
+        color: #080F0F;
+        text-decoration: none;
+    }
+</style>
+<body class="color_ternary">
+    <nav class="navbar navbar-expand-lg color_primary color_text2">
+      <a href="index.html"><img src="logo.png" style="width: 70px;"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon color_text2" style="text-align: center; font-size: 30px;">Meni
+          </span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav" style="display: flex; flex-direction: row; justify-content: space-around;">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link text" id="pocetna" href="index.html"> <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="dropdown" style="margin-top: 9px;">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="caret text" id="recepti" style="color: #EFF2C0;"></a>
+              <ul class="dropdown-menu color_primary">
+                <li><a href="#" class="text" id="predjelo">Predjelo</a></li>
+                <li><a href="#" class="text" id="glavno_jelo">Glavno jelo</a></li>
+                <li><a href="#" class="text" id="desert">Dezert</a></li>
+                <li><a href="#" class="text" id="uzina">Uzina</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text" id="dodaj_recept" href="#"></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text" id="moj_nalog" href="moj_nalog.html"></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text" id="o_nama" href="#"></a>
+            </li>
+          </ul>
+        </ul>
+        <div style="text-align: right;">
+          <img src="serbian_flag.png" class="flag" id="srp" style="height: 50px;">
+          <img src="uk_flag.png" class="flag" id="eng" style="height: 50px;">
+        </div>
+        </div>
+    </nav>
+    <div class="jumbotron color_primary">
+      <div class="container">
+        <div class="row">
+          <div class="col-12" style="text-align: center;">
+            <h1 class="color_text2 text" id="poruka_dobrodoslice" style="font-size: 50px"></h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12" style="text-align: center;">
+              <h1 class="text color_text1" id="naslov_moj_nalog"></h1><hr style="border: 2px solid black;">
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    $(document).ready(function()
+    {
+        setupLanguage();
+        if (localStorage.getItem('korisnik')==null)
+        {
+          window.open('login.html',"_self");
+        }
+    })
+</script>
+</html>
