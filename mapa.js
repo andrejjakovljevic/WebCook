@@ -39,7 +39,11 @@ let reci_sr =
     dodajButton: "Dodaj Recept!",
     video: "Dodajte link videa (opciono):",
     logujte_se: "Morate prvo biti logovani!",
-    uspesno_dodat: "Recept uspesno dodat!"
+    uspesno_dodat: "Recept uspesno dodat!",
+    naslov: "Naslov",
+    duzina: "Duzina pripreme",
+    tip: "Vrsta",
+    izbrisi: "Izbrisi"
 };
 let reci_en = 
 {
@@ -82,7 +86,11 @@ let reci_en =
     dodajButton: "Add the recipe!",
     video: "Add video url (optional):",
     logujte_se: "Please log in first!",
-    uspesno_dodat: "Recipe succesfully added!"
+    uspesno_dodat: "Recipe succesfully added!",
+    naslov: "Title",
+    duzina: "Length of preparation",
+    tip: "Type",
+    izbrisi: "Delete"
 }
 
 let reci=null;
