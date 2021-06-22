@@ -16,27 +16,10 @@
     <script src="mapa.js"></script>
 </head>
 <style>
-    td
-    {
-        text-align: center;
-        font-weight: bold;
-        border-bottom: 2px solid #080F0F;
-    }
-    a:hover
-    {
-        color: #080F0F;
-        text-decoration: none;
-    }
-    th
-    {
-      text-align: center;
-    }
-    button
-    {
-      margin-top: -5px;
-      margin-left: 10px;
-      color: #EFF2C0 !important;
-    }
+  .carousel-item img
+  {
+    height: 300px !important;
+  }
 </style>
 <body class="color_ternary">
     <nav class="navbar navbar-expand-lg color_primary color_text2">
@@ -87,88 +70,64 @@
       </div>
     </div>
     <div class="container">
-        <div class="row">
-            <div class="col-12" style="text-align: center;">
-              <h1 class="text color_text1" id="naslov_moj_nalog"></h1><hr style="border: 2px solid black;">
+      <div class="row">
+        <div class="col-12" style="text-align: center;">
+          <h1 class="color_text1" id="naslov_recepta"></h1><hr style="border: 2px solid black;">
+        </div>
+        <div class="col-12" style="text-align: left;">
+          <span class="color_text1" id="text_recepta">
+          </span>
+        </div>
+      </div>
+      <hr style="border: 2px solid black;">
+      <div class="row" style="margin-bottom: 30px;">
+        <div class="col-6" style="margin:auto">
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="5000">
+            <div class="carousel-inner" style="height: 300px;" id="slike_recept">
+              <div class="carousel-item active">
+                <img class="d-block w-100" src="slika1.jpg" style="height: 100%;" alt="First slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="slika2.jpg" style="height: 100%;" alt="Second slide">
+              </div>
+              <div class="carousel-item">
+                <img class="d-block w-100" src="slika3.jpg" style="height: 100%;" alt="Third slide">
+              </div>
             </div>
-        </div>
-        <div class="row">
-          <div class="col-12">
-            <table class="table table-striped" id="tabelica">
-              <thead style="background-color: rgba(0, 0, 0, 0.5);">
-                <tr>
-                  <th class="text" id="naslov"></th>
-                  <th class="text" id="duzina"></th>
-                  <th class="text" id="tip"></th>
-                  <th></th>
-                </tr>
-              </thead>
-              <tbody id="bodi">
-
-              </tbody>
-            </table>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
           </div>
         </div>
-        <div class="row footer color_primary">
-          <div class="col-lg-12 text" style="text-align: left;" id="foot">
-            
-          </div>
+      </div>
+      <div class="row footer color_primary">
+        <div class="col-lg-12 text" style="text-align: left;" id="foot">
+          
         </div>
+      </div>
     </div>
 </body>
 <script>
-    $(document).ready(function()
-    {
-        let button_string1 = "<button class='btn color_primary' id='dugmic"
-        let button_string2 = "'>";
-        let button_string3 = "</button>";
-        setupLanguage();
-        if (localStorage.getItem('korisnik')==null)
-        {
-          localStorage.setItem('error',true);
-          window.open('login.html',"_self");
-        }
-        let niz_recepata=default_recepti;
-        if (localStorage.getItem('niz_recepata')==null)
-        {
-            localStorage.setItem('niz_recepata',JSON.stringify(niz_recepata));
-        }
-        niz_recepata = JSON.parse(localStorage.getItem('niz_recepata'));
-        for (let i=0;i<niz_recepata.length;i++)
-        {
-          let nes = niz_recepata[i];
-          if (nes.autor!=localStorage.getItem('korisnik'))
-            continue;
-          let red = $("<tr></tr>");
-          let t1 = $("<td></td>");
-          t1.text(nes.naslov);
-          red.append(t1);
-          let t2 = $("<td></td>");
-          t2.text(nes.duzina);
-          red.append(t2);
-          let t3 = $("<td></td>");
-          let tip=null;
-          if (nes.grupa==1) tip=reci["predjelo"];
-          else if (nes.grupa==2) tip=reci["glavno_jelo"];
-          else if (nes.grupa==3) tip=reci["desert"];
-          else if (nes.grupa==4) tip=reci["uzina"];
-          t3.text(tip);
-          red.append(t3);
-          let t4 = $("<td></td>");
-          t4.append($(button_string1 + i + button_string2 + reci["izbrisi"] + button_string3));
-          red.append(t4);
-          $("#bodi").append(red);
-        }
-
-        $("button").click(function()
-        {
-          let id = $(this).attr('id');
-          var res = parseInt(id.substring(6, id.length));
-          let niz_recepata = JSON.parse(localStorage.getItem('niz_recepata'));
-          niz_recepata.splice(res, 1);
-          localStorage.setItem('niz_recepata',JSON.stringify(niz_recepata));
-          window.open("moj_nalog.html","_self");
-        })
-    })
+  $(document).ready(function()
+  {
+    setupLanguage();
+    let recipe = localStorage.getItem('show_recipe');
+    let niz_recepata = JSON.parse(localStorage.getItem('niz_recepata'));
+    let recept = niz_recepata[recipe];
+    $("#naslov_recepta").text(recept.naslov);
+    $("#text_recepta").text(recept.opis);
+    let image_string1 = '<div class="carousel-item active">';
+    let image_string2 = '<img class="d-block w-100" src="'
+    let image_string3 = '" style="height: 100%;" alt="slide">';
+    let image_string4 = '</div>';
+    for(let i = 0; i<recept.slike.length; ++i)
+      $("#slike_recept").append($(image_string1+image_string2+recept.slike[i]+image_string3+image_string4));
+    
+  })
 </script>
 </html>

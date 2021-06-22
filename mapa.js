@@ -47,7 +47,9 @@ let reci_sr =
     naslov_o_nama: "O nama",
     text_o_nama: "U zelji da priblizimo kuvanje mladjim ljudima, a i da naucimo iskusne sefove novim trikovima, napravili smo ovaj veb sajt i omogucili svima da medjusobno razmenjuju kako tradicionalne, tako i nove kreativne recepte. Mi smo mala kompanija koja se (zanimljivo) uopste ne bavi kulinarstvom, pa smo, u nadi da cemo i sami nauciti nesto korisno, kreirali ovu slatko/slanu mrezu. Uzivajte!",
     adresa: "Adresa:",
-    kontakt: "Kontakt:"
+    kontakt: "Kontakt:",
+    naslov_svi_recepti: "Svi recepti",
+    pregled: "Pregled"
 };
 let reci_en = 
 {
@@ -98,7 +100,9 @@ let reci_en =
     naslov_o_nama: "About us",
     text_o_nama: "With desire to bring cooking closer to younger people, and to teach old chefs some new trics as well, we have created this website and allowed everyone to share both traditional and new creative recipes. We are a small company that (interestingly) does not deal with cooking at all, so we created this sweet / salty network in the hope that we will learn something useful ourselves. Enjoy!",
     adresa: "Address:",
-    kontakt: "Contact:"
+    kontakt: "Contact:",
+    naslov_svi_recepti: "All recipes",
+    pregled: "View"
 }
 
 let reci=null;
@@ -126,7 +130,7 @@ let default_recepti=[
       "slike":["./MafiniSaVisnjama.jpg"]
      },
      {
-      "naslov":"Mafini sa visnjama",
+      "naslov":"Milankin kolac sa visnjama",
       "duzina":"40 min",
       "grupa":3,
       "tezina":1,
@@ -160,3 +164,6 @@ function setupLanguage()
     })
 }
 
+function setShow(x){
+    localStorage.setItem('show', x);
+}

@@ -89,7 +89,7 @@
     <div class="container">
         <div class="row">
             <div class="col-12" style="text-align: center;">
-              <h1 class="text color_text1" id="naslov_moj_nalog"></h1><hr style="border: 2px solid black;">
+              <h1 class="text color_text1" id="naslov_svi_recepti"></h1><hr style="border: 2px solid black;">
             </div>
         </div>
         <div class="row">
@@ -137,7 +137,7 @@
         for (let i=0;i<niz_recepata.length;i++)
         {
           let nes = niz_recepata[i];
-          if (nes.autor!=localStorage.getItem('korisnik'))
+          if(nes.grupa != localStorage.getItem('show'))
             continue;
           let red = $("<tr></tr>");
           let t1 = $("<td></td>");
@@ -155,7 +155,7 @@
           t3.text(tip);
           red.append(t3);
           let t4 = $("<td></td>");
-          t4.append($(button_string1 + i + button_string2 + reci["izbrisi"] + button_string3));
+          t4.append($(button_string1 + i + button_string2 + reci["pregled"] + button_string3));
           red.append(t4);
           $("#bodi").append(red);
         }
@@ -164,10 +164,8 @@
         {
           let id = $(this).attr('id');
           var res = parseInt(id.substring(6, id.length));
-          let niz_recepata = JSON.parse(localStorage.getItem('niz_recepata'));
-          niz_recepata.splice(res, 1);
-          localStorage.setItem('niz_recepata',JSON.stringify(niz_recepata));
-          window.open("moj_nalog.html","_self");
+          localStorage.setItem('show_recipe', res);
+          window.open("view_one.html","_self");
         })
     })
 </script>
