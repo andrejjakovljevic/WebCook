@@ -16,16 +16,10 @@
     <script src="mapa.js"></script>
 </head>
 <style>
-    td
-    {
-        text-align: center;
-        font-weight: bold;
-    }
-    a:hover
-    {
-        color: #080F0F;
-        text-decoration: none;
-    }
+  .carousel-item img
+  {
+    height: 300px !important;
+  }
 </style>
 <body class="color_ternary">
     <nav class="navbar navbar-expand-lg color_primary color_text2">
@@ -56,7 +50,7 @@
               <a class="nav-link text" id="moj_nalog" href="moj_nalog.html"></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text" id="o_nama" href="about.html"></a>
+              <a class="nav-link text" id="o_nama" href="#"></a>
             </li>
           </ul>
         </ul>
@@ -76,89 +70,44 @@
       </div>
     </div>
     <div class="container">
-        <div class="row">
-            <div class="col-12" style="text-align: center;">
-              <h1 class="text color_text1" id="naslov_register"></h1><hr style="border: 2px solid black;">
-            </div>
+      <div class="row">
+        <div class="col-12" style="text-align: center;">
+          <h1 class="text color_text1" id="naslov_o_nama"></h1><hr style="border: 2px solid black;">
+          <span class="text color_text1" id="text_o_nama">
+          </span>
         </div>
-        <div class="row">
-            <div class="col-12" style="text-align: center; color: red;" id="greska">
-                
-            </div>
-        </div>
-        <div class="row" style="margin-top: 20px;">
-            <div class="col-6" style="margin: auto;">
-                <table class="table table-striped">
-                    <tr>
-                        <td class="text" id="mejl"></td>
-                        <td><input type="text" name="mejl"></td>
-                    </tr>
-                    <tr>
-                        <td class="text" id="korisnicko"></td>
-                        <td><input type="text" name="korIme"></td>
-                    </tr>
-                    <tr>
-                        <td class="text" id="lozinka"></td>
-                        <td><input type="password" name="pass"></td>
-                    </tr>
-                    <tr>
-                        <td class="text" id="ponlozinka"></td>
-                        <td><input type="password" name="ponpass"></td>
-                    </tr>
-                    <tr>
-                        <td colspan="2">
-                            <button class="btn color_primary color_text2 text" id="regbutton"></button>
-                        </td>
-                    </tr>
-                </table>
-            </div>
-        </div>
-        <div class="row footer color_primary">
-          <div class="col-lg-12 text" style="text-align: left;" id="foot">
-            
+      </div>
+      <hr style="border: 2px solid black;">
+      <div class="row" style="margin-bottom: 30px;">
+        <div class="col-6" style="margin:auto">
+          <div class="text" style="text-align: left; font-weight: bold;" id="adresa">
+
+          </div>
+          <div>
+              Bulevar Kralja Aleksandra 73, Serbia
+          </div>
+          <div class="text" style="text-align: left; font-weight: bold;" id="kontakt">
+
+          </div>
+          <div>
+              +381 11 123 456 7
           </div>
         </div>
+        <div class="col-6" style="margin: auto;">
+            <iframe width="425" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.openstreetmap.org/export/embed.html?bbox=20.47164380550385%2C44.80416248751469%2C20.47888576984406%2C44.80690285721544&amp;layer=mapnik" style="border: 1px solid black"></iframe><br/><small><a href="https://www.openstreetmap.org/#map=18/44.80553/20.47526">View Larger Map</a></small>
+        </div>
+      </div>
+      <div class="row footer color_primary">
+        <div class="col-lg-12 text" style="text-align: left;" id="foot">
+          
+        </div>
+      </div>
     </div>
 </body>
 <script>
-    $(document).ready(function()
-    {
-        setupLanguage();
-
-        $("#regbutton").click(function()
-        {
-            let mejl = $("input[name=mejl]").val();
-            let korIme = $("input[name=korIme]").val();
-            let pass = $("input[name=pass]").val();
-            let ponpass = $("input[name=ponpass]").val();
-            if (mejl=="" || korIme=="" || pass=="" || ponpass=="")
-            {
-                $("#greska").text(reci['unesiteSve']);
-                return;
-            }
-            if (!/\w+@\w+/.test(mejl))
-            {
-                $("#greska").text(reci['losMejl']);
-                return;
-            }
-            if (localStorage.getItem(korIme)!=null)
-            {
-                $("#greska").text(reci['korPostoji']);
-                return;
-            }
-            if (!/[A-Z]/.test(pass) || !/[a-z]/.test(pass) || !/[0-9]/.test(pass))
-            {
-                $("#greska").text(reci['losOblikLozinke']);
-                return;
-            }
-            if (pass!=ponpass)
-            {
-                $("#greska").text(reci['razliciteLozinke']);
-                return;
-            }
-            localStorage.setItem(korIme,pass);
-            window.open("moj_nalog.html","_self");
-        })
-    })
+  $(document).ready(function()
+  {
+    setupLanguage();
+  })
 </script>
 </html>

@@ -67,7 +67,7 @@
               <a class="nav-link text" id="moj_nalog" href="moj_nalog.html"></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text" id="o_nama" href="#"></a>
+              <a class="nav-link text" id="o_nama" href="about.html"></a>
             </li>
           </ul>
         </ul>
@@ -109,6 +109,11 @@
             </table>
           </div>
         </div>
+        <div class="row footer color_primary">
+          <div class="col-lg-12 text" style="text-align: left;" id="foot">
+            
+          </div>
+        </div>
     </div>
 </body>
 <script>
@@ -123,7 +128,7 @@
           localStorage.setItem('error',true);
           window.open('login.html',"_self");
         }
-        let niz_recepata=[];
+        let niz_recepata=default_recepti;
         if (localStorage.getItem('niz_recepata')==null)
         {
             localStorage.setItem('niz_recepata',JSON.stringify(niz_recepata));
@@ -132,7 +137,8 @@
         for (let i=0;i<niz_recepata.length;i++)
         {
           let nes = niz_recepata[i];
-          if (nes.autor==localStorage.getItem('korisnik'));
+          if (nes.autor!=localStorage.getItem('korisnik'))
+            continue;
           let red = $("<tr></tr>");
           let t1 = $("<td></td>");
           t1.text(nes.naslov);

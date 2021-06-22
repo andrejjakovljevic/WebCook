@@ -43,7 +43,11 @@ let reci_sr =
     naslov: "Naslov",
     duzina: "Duzina pripreme",
     tip: "Vrsta",
-    izbrisi: "Izbrisi"
+    izbrisi: "Izbrisi",
+    naslov_o_nama: "O nama",
+    text_o_nama: "U zelji da priblizimo kuvanje mladjim ljudima, a i da naucimo iskusne sefove novim trikovima, napravili smo ovaj veb sajt i omogucili svima da medjusobno razmenjuju kako tradicionalne, tako i nove kreativne recepte. Mi smo mala kompanija koja se (zanimljivo) uopste ne bavi kulinarstvom, pa smo, u nadi da cemo i sami nauciti nesto korisno, kreirali ovu slatko/slanu mrezu. Uzivajte!",
+    adresa: "Adresa:",
+    kontakt: "Kontakt:"
 };
 let reci_en = 
 {
@@ -90,10 +94,49 @@ let reci_en =
     naslov: "Title",
     duzina: "Length of preparation",
     tip: "Type",
-    izbrisi: "Delete"
+    izbrisi: "Delete",
+    naslov_o_nama: "About us",
+    text_o_nama: "With desire to bring cooking closer to younger people, and to teach old chefs some new trics as well, we have created this website and allowed everyone to share both traditional and new creative recipes. We are a small company that (interestingly) does not deal with cooking at all, so we created this sweet / salty network in the hope that we will learn something useful ourselves. Enjoy!",
+    adresa: "Address:",
+    kontakt: "Contact:"
 }
 
 let reci=null;
+let default_recepti=[
+    {
+      "naslov":"Kolac sa malinama",
+      "duzina":"50 min",
+      "grupa":3,
+      "tezina":1,
+      "opis":"Mikserom umutiti jaja, šećer i vanilin šećer. Dodati kiselo mleko, ulje i sjediniti mikserom. Zatim, umešati brašno pomešano sa praškom za pecivo i lagano umutiti mikserom kako bi se svi sastojci sjedinili.\nPleh obložiti pek-papirom i usuti pripremljenu smesu.\nPreko smese rasporediti maline. Peći u dobro zagrejanoj rerni na 180 stepeni 30 minuta.\nGotov kolač izvaditi iz rerne, prakriti čistom kuhinjskom krpom i ostavitu da se prohladi.\nKolač seći na parčad željene veličine, servirati i poslužiti.",
+      "url":"",
+      "autor":"Le Chef",
+      "komentari":[],
+      "slike":["./KolacSaMalinama.jpg"]
+    },
+    {
+      "naslov":"Mafini sa visnjama",
+      "duzina":"30 min",
+      "grupa":3,
+      "tezina":1,
+      "opis":"Višnje očistiti od koštica i staviti u cediljku da se ocede. U kalupe za mafine staviti papirne korpice (meni je izašlo 16 mafina). Rernu uključiti na 180 stepeni.\nU vanglicu staviti jaja i dodati mešavinu šećera i vanilinog šećera. Mikserom umutiti da se dobije kremasta, svetla, smesa. Dodati mleko i ulje. Mutiti najmanjom brzinom jedan minut. Na kraju ubaciti mešavinu brašna i praška za pecivo. Umutiti.\nU pripremljene korpice za mafine staviti testo da bude popunjena 1/2 korpica. Preko testa staviti po 3-4 višnje, pa prekriti testom toliko da korpice ostanu oko 3 mm prazne. Na isti način napuniti sve korpice.\nKalup sa korpicama staviti da se peče 20-25 minuta, odnosno dok mafini ne porumene (možete da isprobate i čačkalicom da li su pečeni). Pečene mafine ostaviti da se ohlade pa ih dekorisati po želji.",
+      "url":"",
+      "autor":"Le Chef",
+      "komentari":[],
+      "slike":["./MafiniSaVisnjama.jpg"]
+     },
+     {
+      "naslov":"Mafini sa visnjama",
+      "duzina":"40 min",
+      "grupa":3,
+      "tezina":1,
+      "opis":'Danas smo bili na ručku kod roditelja moje snaje. I posle obilja raznih đakonija, kako to obično bude u Vojvodini, moja prija je kazala da će nas sada poslužiti sa jednim običnim, starinskim, kolačem sa višnjama. Pošto se meni taj njen "običan" kolač toliko dopao da sam odmah zatražila recept. I da se razumemo, ovaj kolač nisam ja pravila, samo prenosim recept. Morala sam da ga slikam u ovoj prekrasnoj bašti...\nPrvo očistiti višnje od koštica i staviti ih u cediljku da se dobro ocede. Pleh veličine (unutrašnje mere) 40 cm x 24cm dobro podmazati uljem i posuti brašnom. Rernu uključiti da se zagreje na 180 stepeni.\nOdvojiti belanca od žumanaca. Belanca staviti u dublju posudu i mutiti ih dok ne pobele. Zatim, postepeno, dodavati šećer i čvrsto ih umutiti. Dodavati jedno po jedno žumance i umutiti da se dobije penasta smesa. Zatim dodati mleko i ulje i mućenjem sjediniti. Na kraju ubaciti, iz 2-3 puta, mešavinu brašna i praška za pecivo. Odložiti mikser i brašno sjediniti sa smesom kašikom.\nSipati polovinu testa u pleh i staviti da se peče samo koliko da se testo malo stegne po površini. Izvaditi pleh i gusto poređati višnje. Preliti višnje drugom polovinom testa i vratiti da se kolač ispeče do kraja (oko 30 minuta ili probati čačkalicom da li je kolač pečen). Pečeni kolač ostaviti da se ohladi pa ga posuti šećerom u prahu. Iseći kolač na kocke i poslužiti.',
+      "url":"",
+      "autor":"Le Chef",
+      "komentari":[],
+      "slike":["./MilankinKolacSaVisnjama.jpg"]
+     }
+  ]
 
 function setupLanguage()
 {
