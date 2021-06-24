@@ -102,15 +102,19 @@
       <hr style="border: 2px solid black;">
       
       <div class="row" style="margin-bottom: 30px;">
-        <div class="col-12" style="margin: auto;">
+        <div class="col-6" style="margin: auto;">
           <h1 class="color_text1 text" id="komentari"></h1>
         </div>
-      </div>
-      <div class="row" style="margin-bottom: 30px;" id="komenc">
-        <div class="col-12" style="margin: auto;">
-          <h4 class="color_text1">Mare</h4>
-          Znaci najjace
+        <div class="col-6 text-right" style="margin: auto;">
+          <h1 id="score"></h1>
         </div>
+      </div>
+      <span class="text" id="vas_komentar"></span>
+      <div class="row" style="margin-bottom: 30px;" id="novi_komentar">
+        
+      </div>
+      <div id="komenc">
+        
       </div>
       <div class="row footer color_primary">
         <div class="col-lg-12 text" style="text-align: left;" id="foot">
@@ -120,8 +124,49 @@
     </div>
 </body>
 <script>
+
+  function addComment(){
+    let radios = document.getElementsByName("zvezda");
+    let ocena = 0;
+    for(let i = 0; i<5; ++i)
+    {
+      if(radios[i].checked)
+      {
+        ocena = i+1;
+        break;
+      }
+    }
+    let tex = document.getElementById("text_komentara").value;
+    let recipe = localStorage.getItem('show_recipe');
+    let korisnik = localStorage.getItem('korisnik');
+    let niz_recepata = JSON.parse(localStorage.getItem('niz_recepata'));
+    let len = niz_recepata[recipe].komentari.length;
+    for(let i = 0; i<len; ++i)
+    {
+      if(niz_recepata[recipe].komentari[i].korisnik == korisnik)
+      {
+        niz_recepata[recipe].komentari[i].text = tex;
+        niz_recepata[recipe].komentari[i].ocena = ocena;
+        localStorage.setItem('niz_recepata', JSON.stringify(niz_recepata));
+        window.open("view_one.html", "_self");
+        return;
+      }
+    }
+    niz_recepata[recipe].komentari.push({"korisnik":korisnik, "text":tex, "ocena":ocena});
+    localStorage.setItem('niz_recepata', JSON.stringify(niz_recepata));
+    window.open("view_one.html", "_self");
+  };
+
   $(document).ready(function()
   {
+    if(localStorage.getItem("korisnik")!=null)
+    {
+      $("#novi_komentar").append($('<div class="col-10"><textarea id="text_komentara" style="width: 100%;"></textarea><button class="btn color_primary text" id="posalji" onclick="addComment()"></button></div><div class="col-2"><input type="radio" name="zvezda" value="1"> 1 <img src="./1_z.png" style="height: 20px; filter: brightness(0.7)"><br><input type="radio" name="zvezda" value="2"> 2 <img src="./2_z.png" style="height: 20px; filter: brightness(0.7)"><br><input type="radio" name="zvezda" value="3"> 3 <img src="./3_z.png" style="height: 20px; filter: brightness(0.7)"><br><input type="radio" name="zvezda" value="4"> 4 <img src="./4_z.png" style="height: 20px; filter: brightness(0.7)"><br><input type="radio" name="zvezda" value="5" checked> 5 <img src="./5_z.png" style="height: 20px; filter: brightness(0.7)"><br></div>'));
+    }
+    else
+    {
+      document.getElementById("vas_komentar").classList.remove("text");
+    }
     setupLanguage();
     let recipe = localStorage.getItem('show_recipe');
     let niz_recepata = JSON.parse(localStorage.getItem('niz_recepata'));
@@ -137,6 +182,22 @@
       $("#slike_recept").append($(image_string1+image_string2+recept.slike[i]+image_string3+image_string4));
       image_string1 = '<div class="carousel-item">';
     }
+    let avg = 0;
+    for(let i = 0; i<recept.komentari.length; ++i)
+    {
+      let string1 = '<div class="row" style="margin-bottom: 30px;"><div class="col-12" style="margin: auto;">';
+      let string2 = '<h4 class="color_text1">';
+      let string3 = recept.komentari[i].korisnik;
+      let string4 = ' &nbsp;<img src="./';
+      let string5 = recept.komentari[i].ocena;
+      let string6 = '_z.png" alt="" style="height: 40px; filter: brightness(0.7);"></h4>';
+      let string7 = recept.komentari[i].text;
+      let string8 = '</div></div>';
+      $("#komenc").append($(string1+string2+string3+string4+string5+string6+string7+string8));
+      avg += recept.komentari[i].ocena;
+    }
+    avg /= recept.komentari.length;
+    $("#score").append(Math.round(avg*100)/100);
     
   })
 </script>
