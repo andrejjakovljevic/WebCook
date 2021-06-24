@@ -49,7 +49,9 @@ let reci_sr =
     adresa: "Adresa:",
     kontakt: "Kontakt:",
     naslov_svi_recepti: "Svi recepti",
-    pregled: "Pregled"
+    pregled: "Pregled",
+    komentari: "Komentari",
+    logout: "Odjavi se"
 };
 let reci_en = 
 {
@@ -98,11 +100,13 @@ let reci_en =
     tip: "Type",
     izbrisi: "Delete",
     naslov_o_nama: "About us",
-    text_o_nama: "With desire to bring cooking closer to younger people, and to teach old chefs some new trics as well, we have created this website and allowed everyone to share both traditional and new creative recipes. We are a small company that (interestingly) does not deal with cooking at all, so we created this sweet / salty network in the hope that we will learn something useful ourselves. Enjoy!",
+    text_o_nama: "With desire to bring cooking closer to younger people, and to teach old chefs some new tricks as well, we have created this website and allowed everyone to share both traditional and new creative recipes. We are a small company that (interestingly) does not deal with cooking at all, so we created this sweet / salty network in the hope that we will learn something useful ourselves. Enjoy!",
     adresa: "Address:",
     kontakt: "Contact:",
     naslov_svi_recepti: "All recipes",
-    pregled: "View"
+    pregled: "View",
+    komentari: "Comments",
+    logout: "Logout"
 }
 
 let reci=null;
@@ -144,6 +148,11 @@ let default_recepti=[
 
 function setupLanguage()
 {
+    if (localStorage.getItem('korisnik')==null)
+    {
+        reci_sr['logout'] = 'Prijavi se';
+        reci_en['logout'] = 'Login';
+    }
     if (localStorage.getItem('jezik')==null)
     {
         localStorage.setItem('jezik','srp');
@@ -166,4 +175,10 @@ function setupLanguage()
 
 function setShow(x){
     localStorage.setItem('show', x);
+}
+
+function logout(){
+    if(localStorage.getItem('korisnik')!=null)
+        localStorage.removeItem('korisnik');
+    window.open("login.html","_self");
 }
