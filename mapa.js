@@ -150,6 +150,138 @@ let default_recepti=[
       "slike":["./MafiniSaVisnjama.jpg"]
      },
      {
+        "naslov":"Krompir lazanja",
+        "duzina":"60 min",
+        "grupa":2,
+        "tezina":1,
+        "opis":' Krompir očistite i isecite na tanke listice. Crni i beli luk iseckajte sitno pa stavite da se dinsta, kada je luk dobio zlatnu boju dodajte meso pa dinstajte zajedno. Dodati bolognese sos (teglica) i dinstajte jos 5’ pa dodajte začine (biber, so, peršun, origano). U pleh ili vatrostalnu složite 1/3 krompira pa premazete besamel sosom, preko 1/2 fila pa narendate malo kačakavalja, ponovite postupak i na kraju zatvorite krompirom koji opet premazete bešamel sosom i pospete kačakvalj. Prekrite folijom i pecite 20ak minuta na 200C, a posle otkrite i još 20k bez folije.',
+        "url":"",
+        "autor":"Le Chef",
+        "komentari":[
+          {
+              "korisnik": "blabla",
+              "text": "Odlicno!",
+              "ocena": 5
+          },
+          {
+              "korisnik": "tomislav",
+              "text": "Sjajan predlog, zamerka na detalje, inace super!",
+              "ocena": 4
+          }
+        ],
+        "slike":["./KrompirLazanja.jpg"]
+     },
+     {
+        "naslov":"Posni đuveč sa začinima pa još i ljut",
+        "duzina":"60 min",
+        "grupa":2,
+        "tezina":1,
+        "opis":'Prvo sam skuvala šolju graška i šolju boranije onako al dente, da ne bude prekuvano. U drugoj šerpi sam skuvala 2 krompira veća i šolju pirinča. Sve sam procedila i pomešala. Dodala sam pola tegle sataraša koji inače spremam kao zimnicu. Sataraš sadrži crni luk, beli luk, biber, paradajz i papriku i naravno začine sve uprženo na ulju. Dodala sam još jednu papriku iseckanu koju sam imala u zamrzivaču, oko dva paradajza koja sam takođe izvadila iz zamrzivača. Od začina sam stavila sve po ukusu biber, origano, bosiljak i majčinu dušicu. Naseckala još malo belog luka, dodala kašičicu karija, kašičicu ljute začinske mlevene paprike. Zaboravih, soli sam dodala po ukusu. Sve izručite u vatrostalni pekač, nalijte vodom i na 180 stepeni da se još ukrčka i zapeče malo odozgo. Imala sam i šargarepu ali sam potpuno zaboravila da je stavim. Tako... ja napravila đuveč prste da poližeš.',
+        "url":"",
+        "autor":"Le Chef",
+        "komentari":[
+          {
+              "korisnik": "blabla",
+              "text": "Odlicno!",
+              "ocena": 5
+          },
+          {
+              "korisnik": "tomislav",
+              "text": "Sjajan predlog, zamerka na detalje, inace super!",
+              "ocena": 4
+          }
+        ],
+        "slike":["./Djuvec.jpg"]
+     },
+     {
+        "naslov":"Posna boranija sa graškom",
+        "duzina":"40 min",
+        "grupa":2,
+        "tezina":1,
+        "opis":' Kada spremam posna jela volim da imaju što više povrća, tako je i ovo jedno od tih jela. Crni luk, koren peršuna, paškanata i celera sitno iseckati. Šargarepu iseći na polukrugove. Krompir iseći na kockice. Paradajz oljuštiti i iseći na kocke. Peršun i beli luk sitno iseckati. Ulje sipati u dublju posudu i staviti da se ugreje. Na zagrejano ulje ubaciti iseckani crni luk, šargarepu, koren peršuna, paškanata i celera. Promešati i na tihoj temperaturi dinstati 10-ak minuta. Ubaciti boraniju, grašak (boraniju i grašak sam sada koristila zamrznute, a na isti način spremam i kada je povrće sveže), krompir i paradajz. Promešati. Posuti sa alevom paprikom, promešati i naliti sa vrelom vodom. Poklopiti, ali tako da ima vrlo malo prostora da izlazi para i staviti na tihoj vatri da krčka. Kada voda provri posuti suvim biljnim začinom i biberom po ukusu. Nastaviti sa kuvanjem sve dok se čorbica ne zgusne. Nije potrebna zaprška, jer će čorbica da dobije gustinu od krompira. Pri kraju kuvanja ubaciti iseckani beli luk i peršun. Promešati i posle 1-2 minuta skloniti sa vatre. Poslužiti sa salatom po želji.',
+        "url":"",
+        "autor":"Le Chef",
+        "komentari":[
+          {
+              "korisnik": "blabla",
+              "text": "Odlicno!",
+              "ocena": 5
+          },
+          {
+              "korisnik": "tomislav",
+              "text": "Sjajan predlog, zamerka na detalje, inace super!",
+              "ocena": 4
+          }
+        ],
+        "slike":["./PosnaBoranija.jpg"]
+     },
+     {
+        "naslov":"Štrudla sa makom, rogačem i višnjama",
+        "duzina":"80 min",
+        "grupa":4,
+        "tezina":1,
+        "opis":' U toplom mleku sa dodatkom kašičice šećera razmrviti kvasac, promešati i ostaviti da se kvasac aktivira. U vanglicu staviti brašno, dodati šećer, so i narendanu koricu limuna pa promešati. Zatim dodati jaje, otopljeni (i prohlađeni) maslac i pripremljeni kvasac. Zamesiti testo. Testo prebaciti na pobrašnjenu podlogu i uz minimalno dodavanje brašna umesiti ga da se dobije mekano, elastično testo. Testo odmah podeliti na dva jednaka dela. Od svakog dela oblikovati krug i staviti ih (posebno) u dublju posudu. Testo prekriti providnom folijom i ostaviti da naraste. Fil: Mleveni mak, rogač šećer i rum šećer ili rum staviti u odgovarajuću posudu. Promešati i preliti sa vrelim mlekom, ali ne sipati svu količinu mleka odjedanput. Mleko sipati sve dok ne dobijete gustu smesu koja može da se razmaže po testu. Ostaviti da se ohladi. Pleh veličine 30cm x 20cm premazati maslacem i dno prekriti pek papirom. Uzeti prvi deo testa, posuti brašnom radnu površinu i testo razviti u pravougaoni oblik debljine 0,5 cm, prema plehu u kome će se peći. Preko testa ravnomerno premazati polovinu fila i preko fila rasporediti polovinu višanja (višnje prvo posuti kašičicom gustina, promešati pa ih rasporediti preko fila). Uviti testo u rolat. Bočne stranice uvući malo unutar rolata da ne bi iscureo fil prilikom pečenja. Štrudlu pprebaciti u pripremljeni pleh. Na isti način napraviti i drugu štrudlu. Na sredini pleha, između štrudli, staviti savijeni list pek papira. Na taj način će te sprečiti da vam se štrudle zalepe jedna za drugu. Štrudle prekriti kuhinjskom krpom i ostaviti pola sata da narastu. Rernu zagrejati na 180 stepeni. Narasle štrudle premazati mešavinom žumanceta i mleka (ja sam ih posula i listićima badema) i staviti da se peču 30-35 minuta. Pri kraju pečenja, ako treba, prekriti štrudle alu folijom da površina ne potamni previše. Pečene štrudle (probati čačkalicom da li su pečene) pokriti kuhinjskom krpom i ostaviti ih u plehu 10 minuta. Zatim ih iz pleha prebaciti na kuhinjske krpe, umotati ih i ostaviti da se ohlade, pa ih iseći.',
+        "url":"",
+        "autor":"Le Chef",
+        "komentari":[
+          {
+              "korisnik": "blabla",
+              "text": "Odlicno!",
+              "ocena": 5
+          },
+          {
+              "korisnik": "tomislav",
+              "text": "Sjajan predlog, zamerka na detalje, inace super!",
+              "ocena": 4
+          }
+        ],
+        "slike":["./StrudlaSaMakom.jpg"]
+     },
+     {
+        "naslov":"Mekana pogača sa jogurtom",
+        "duzina":"30 min",
+        "grupa":4,
+        "tezina":1,
+        "opis":' U toploj vodi sa dodatkom jedne kašičice šećera razmrviti kvasac, promešati, i ostaviti da se aktivira. Tepsiju vel. 26cm podmazati maslacem ili dno tepsije prekriti pek papirom, a stranice premazati maslacem. U vanglicu staviti brašno, dodati kašičicu šećera i soli pa promešati. Zatim dodati belance, ulje, jogurt i pripremljeni kvasac. Zamesiti testo. Testo mesiti oko dva minuta, uz minimalno dodavanje brašna. Formirati od testa oblik lopte i prebaciti ga u tepsiju. Rukama ga ispretiskati i formirati pogaču. Prekriti tepsiju kkuhinjskom krpom i ostaviti da testo naraste, oko 30 minuta. Rernu zagrejati na 180 stepeni. Naraslu pogaču (ne treba puno da naraste) premazati mešavinom žumanceta i mleka. Površinu pogače izbockati čačkalicom da se ne bi odvojila korica posle pečenja i staviti da se peče 30-35 minuta. Ako treba pogaču prekriti alu folijom da zadrži lepu boju. Pečenu pogaču umotati u kuhinjsku krpu i ostaviti da se prohladi. Izlomite je, nikako se ne seče, i poslužite.',
+        "url":"",
+        "autor":"Le Chef",
+        "komentari":[
+          {
+              "korisnik": "blabla",
+              "text": "Odlicno!",
+              "ocena": 5
+          },
+          {
+              "korisnik": "tomislav",
+              "text": "Sjajan predlog, zamerka na detalje, inace super!",
+              "ocena": 4
+          }
+        ],
+        "slike":["./MekanaPogaca.jpg"]
+     },
+     {
+        "naslov":"Bakina pita sa pecenkom",
+        "duzina":"90 min",
+        "grupa":4,
+        "tezina":1,
+        "opis":'Prvu koru naprskati uljem pa preko nje staviti drugu koru i nju poprskati uljem, zatim pečenku po kori, pošećeriti po ukusu (sa 2-3 kašike šećera) i vanil šećerom zatim preko posuti grizom(po 1 kašiku). Saviti koru sa obe strane malo oko 1 cm, pa uviti rolat i ređati u pleh obložen pek papirom. Peći na 200 C oko 30 minuta, dok ne porumeni. Prijatno!!!',
+        "url":"",
+        "autor":"Le Chef",
+        "komentari":[
+          {
+              "korisnik": "blabla",
+              "text": "Odlicno!",
+              "ocena": 5
+          },
+          {
+              "korisnik": "tomislav",
+              "text": "Sjajan predlog, zamerka na detalje, inace super!",
+              "ocena": 4
+          }
+        ],
+        "slike":["./BakinaPita.jpg"]
+     },
+     {
       "naslov":"Milankin kolac sa visnjama",
       "duzina":"40 min",
       "grupa":3,
