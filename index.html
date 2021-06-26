@@ -105,6 +105,21 @@
             </a>
           </div>
         </div>
+        <div class="col-6" style="margin:auto">
+            <table class="table table-striped" id="tabelica">
+              <thead style="background-color: rgba(0, 0, 0, 0.5);">
+                <tr>
+                  <th class="text" id="naslov"></th>
+                  <th class="text" id="duzina"></th>
+                  <th class="text" id="tip"></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="bodi">
+
+              </tbody>
+            </table>
+        </div>
       </div>
       <div class="row footer color_primary">
         <div class="col-lg-12 text" style="text-align: left;" id="foot">
@@ -116,7 +131,64 @@
 <script>
   $(document).ready(function()
   {
+    let button_string1 = "<button class='btn color_primary' id='dugmic"
+    let button_string2 = "'>";
+    let button_string3 = "</button>";
     setupLanguage();
-  })
+    let niz_recepata=default_recepti;
+    if (localStorage.getItem('niz_recepata')==null)
+    {
+        localStorage.setItem('niz_recepata',JSON.stringify(niz_recepata));
+    }
+    niz_recepata = JSON.parse(localStorage.getItem('niz_recepata'));
+    let sorted_niz = [];
+    for (let i=0; i<niz_recepata.length; i++)
+    {
+      let avg = 0.0;
+      for (let j=0; j<niz_recepata[i].komentari.length; ++j)
+      {
+        avg += niz_recepata[i].komentari[j].ocena;
+      }
+      avg/=niz_recepata[i].komentari.length;
+      avg = Math.round(avg*100)/100;
+      sorted_niz.push([avg, niz_recepata[i], i]);
+    }
+    sorted_niz.sort(criter);
+    for (let i=0; i<3; ++i)
+    {
+      let nes = sorted_niz[i][1];
+      let red = $("<tr></tr>");
+      let t1 = $("<td></td>");
+      t1.text(nes.naslov);
+      red.append(t1);
+      let t2 = $("<td></td>");
+      t2.text(nes.duzina);
+      red.append(t2);
+      let t3 = $("<td></td>");
+      let tip=null;
+      if (nes.grupa==1) tip=reci["predjelo"];
+      else if (nes.grupa==2) tip=reci["glavno_jelo"];
+      else if (nes.grupa==3) tip=reci["desert"];
+      else if (nes.grupa==4) tip=reci["uzina"];
+      t3.text(tip);
+      red.append(t3);
+      let t4 = $("<td></td>");
+      t4.append($(button_string1 + sorted_niz[i][2] + button_string2 + reci["pregled"] + button_string3));
+      red.append(t4);
+      $("#bodi").append(red);
+    }
+
+    $("button").click(function()
+    {
+      let id = $(this).attr('id');
+      var res = parseInt(id.substring(6, id.length));
+      localStorage.setItem('show_recipe', res);
+      window.open("view_one.html","_self");
+    })
+  });
+
+  function criter(a, b){
+    return (a[0] < b[0]) ? 1 : -1;
+  }
 </script>
 </html>
