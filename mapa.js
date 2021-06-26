@@ -53,7 +53,11 @@ let reci_sr =
     komentari: "Komentari",
     logout: "Odjavi se",
     vas_komentar: "Vas komentar",
-    posalji: "Posalji"
+    posalji: "Posalji",
+    bread_moj_nalog: "Pocetna > Moj nalog",
+    bread_pregled_s: "Pocetna > Pregled",
+    bread_dodaj: "Pocetna > Dodaj recept",
+    bread_o: "Pocetna > O nama"
 };
 let reci_en = 
 {
@@ -110,7 +114,11 @@ let reci_en =
     komentari: "Comments",
     logout: "Logout",
     vas_komentar: "Your comment",
-    posalji: "Send"
+    posalji: "Send",
+    bread_moj_nalog: "Start page > My account",
+    bread_pregled_s: "Start page > View recipes",
+    bread_dodaj: "Start page > Add a recipe",
+    bread_o: "Start page > About"
 }
 
 let reci=null;
