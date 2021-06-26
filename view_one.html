@@ -80,6 +80,9 @@
         <div class="col-12" style="text-align: center;">
           <h1 class="color_text1" id="naslov_recepta"></h1><hr style="border: 2px solid black;">
         </div>
+        <div id="video" class="col-12" style="text-align: center;">
+          
+        </div>
         <div class="col-6" style="text-align: left;">
           <span class="color_text1" id="text_recepta">
           </span>
@@ -202,6 +205,10 @@
     }
     avg /= recept.komentari.length;
     $("#score").append(Math.round(avg*100)/100);
+    let vid1 = '<iframe width="50%" height="315" src="';
+    let vid2 = '"></iframe><hr style="border: 2px solid black;">';
+    if(recept.url != "" && recept.url != null)
+      $("#video").append(vid1 + recept.url + vid2);
   })
 </script>
 </html>
