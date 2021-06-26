@@ -53,7 +53,11 @@ let reci_sr =
     komentari: "Komentari",
     logout: "Odjavi se",
     vas_komentar: "Vas komentar",
-    posalji: "Posalji"
+    posalji: "Posalji",
+    bread_moj_nalog: "Pocetna > Moj nalog",
+    bread_pregled_s: "Pocetna > Pregled",
+    bread_dodaj: "Pocetna > Dodaj recept",
+    bread_o: "Pocetna > O nama"
 };
 let reci_en = 
 {
@@ -110,7 +114,11 @@ let reci_en =
     komentari: "Comments",
     logout: "Logout",
     vas_komentar: "Your comment",
-    posalji: "Send"
+    posalji: "Send",
+    bread_moj_nalog: "Start page > My account",
+    bread_pregled_s: "Start page > View recipes",
+    bread_dodaj: "Start page > Add a recipe",
+    bread_o: "Start page > About"
 }
 
 let reci=null;
@@ -121,7 +129,7 @@ let default_recepti=[
       "grupa":3,
       "tezina":1,
       "opis":"Mikserom umutiti jaja, šećer i vanilin šećer. Dodati kiselo mleko, ulje i sjediniti mikserom. Zatim, umešati brašno pomešano sa praškom za pecivo i lagano umutiti mikserom kako bi se svi sastojci sjedinili.\nPleh obložiti pek-papirom i usuti pripremljenu smesu.\nPreko smese rasporediti maline. Peći u dobro zagrejanoj rerni na 180 stepeni 30 minuta.\nGotov kolač izvaditi iz rerne, prakriti čistom kuhinjskom krpom i ostavitu da se prohladi.\nKolač seći na parčad željene veličine, servirati i poslužiti.",
-      "url":"",
+      "url":"https://www.youtube.com/embed?v=C6oLNdLmfPc",
       "autor":"Le Chef",
       "komentari":[
           {
