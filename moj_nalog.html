@@ -91,7 +91,7 @@
     </div>
     <div class="container">
       <div class="row">
-        <div class="col text" id="bread_moj_nalog">
+        <div class="col text fensi" id="bread_moj_nalog">
           
         </div>
       </div>
@@ -109,9 +109,33 @@
                   <th class="text" id="duzina"></th>
                   <th class="text" id="tip"></th>
                   <th></th>
+                  <th></th>
                 </tr>
               </thead>
               <tbody id="bodi">
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="row">&nbsp;</div>
+        <div class="row">
+          <div class="col-12" style="text-align: center;">
+            <h1 class="text color_text1" id="naslov_moji_komentari"></h1><hr style="border: 2px solid black;">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12">
+            <table class="table table-striped" id="tabelica_komentari">
+              <thead style="background-color: rgba(0, 0, 0, 0.5);">
+                <tr>
+                  <th class="text" id="naslov"></th>
+                  <th class="text" id="ocena"></th>
+                  <th></th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody id="bodi_komentari">
 
               </tbody>
             </table>
@@ -127,9 +151,15 @@
 <script>
     $(document).ready(function()
     {
-        let button_string1 = "<button class='btn color_primary' id='dugmic"
+        let button_string1 = "<button class='btn color_primary brisi' id='dugmic"
         let button_string2 = "'>";
         let button_string3 = "</button>";
+        let button_string11 = "<button class='btn color_primary brisi_kom' id='dugmic_komentar"
+        let button_string21 = "'>";
+        let button_string31 = "</button>";
+        let button_string12 = "<button class='btn color_primary pregled_dug' id='dugmic_pregled"
+        let button_string22 = "'>";
+        let button_string32 = "</button>";
         setupLanguage();
         if (localStorage.getItem('korisnik')==null)
         {
@@ -165,10 +195,40 @@
           let t4 = $("<td></td>");
           t4.append($(button_string1 + i + button_string2 + reci["izbrisi"] + button_string3));
           red.append(t4);
+          let t5 = $("<td></td>");
+          t5.append($(button_string12 + i + button_string22 + reci["pregled"] + button_string32));
+          red.append(t5);
           $("#bodi").append(red);
         }
 
-        $("button").click(function()
+        for (let i=0;i<niz_recepata.length;i++)
+        {
+          let nes = niz_recepata[i];
+          let komentari = nes.komentari;
+          for (let j=0;j<komentari.length;j++)
+          {
+            let komentar = komentari[j];
+            if (komentar.korisnik==localStorage.getItem('korisnik'))
+            {
+              let red = $("<tr></tr>");
+              let t1 = $("<td></td>");
+              t1.text(nes.naslov);
+              red.append(t1);
+              let t3 = $("<td></td>");
+              t3.text(komentar.ocena);
+              red.append(t3);
+              let t2 = $("<td></td>");
+              t2.append($(button_string11 + i + button_string21 + reci["izbrisi"] + button_string31));
+              red.append(t2);
+              let t5 = $("<td></td>");
+              t5.append($(button_string12 + i + button_string22 + reci["pregled"] + button_string32));
+              red.append(t5);
+              $("#bodi_komentari").append(red);
+            }
+          }
+        }
+
+        $(".brisi").click(function()
         {
           let id = $(this).attr('id');
           var res = parseInt(id.substring(6, id.length));
@@ -176,6 +236,34 @@
           niz_recepata.splice(res, 1);
           localStorage.setItem('niz_recepata',JSON.stringify(niz_recepata));
           window.open("moj_nalog.html","_self");
+        })
+
+        $(".brisi_kom").click(function()
+        {
+          let id = $(this).attr('id');
+          var res = parseInt(id.substring(15,id.length));
+          let niz_recepata = JSON.parse(localStorage.getItem('niz_recepata'));
+          let recept = niz_recepata[res];
+          let brisi = -1;
+          for (let i=0;i<recept.komentari.length;i++)
+          {
+            if (recept.komentari[i].korisnik==localStorage.getItem('korisnik'))
+            {
+              brisi=i;
+              break;
+            }
+          }
+          recept.komentari.splice(brisi,1);
+          localStorage.setItem('niz_recepata',JSON.stringify(niz_recepata));
+          window.open("moj_nalog.html","_self");
+        })
+
+        $(".pregled_dug").click(function()
+        {
+          let id = $(this).attr('id');
+          var res = parseInt(id.substring(14, id.length));
+          localStorage.setItem('show_recipe', res);
+          window.open("view_one.html","_self");
         })
     })
 </script>
