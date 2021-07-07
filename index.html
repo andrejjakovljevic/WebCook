@@ -140,6 +140,13 @@
         </div>
       </div>
       <hr style="border: 2px solid black;">
+      <div class="row">
+        <div class="col-12">
+          <table id="blogovi">
+
+          </table>
+        </div>
+      </div>
       <div class="row footer color_primary">
         <div class="col-lg-12 text" style="text-align: left;" id="foot">
           
@@ -147,6 +154,14 @@
       </div>
     </div>
 </body>
+
+<style>
+  #blogovi tr
+  {
+    border-bottom: 3px solid #DE6B48;
+  }
+</style>
+
 <script>
   $(document).ready(function()
   {
@@ -195,6 +210,19 @@
       t4.append($(button_string1 + sorted_niz[i][2] + button_string2 + reci["pregled"] + button_string3));
       red.append(t4);
       $("#bodi").append(red);
+    }
+
+    for (let i=0;i<blogovi.length;i++)
+    {
+      let red = $("<tr>");
+      let kol1 = $("<td>").addClass("blog_naslov");
+      let kol2 = $("<td>");
+      let kol3 = $("<td>");
+      kol1.text(blogovi[i].Naslov);
+      kol2.html(blogovi[i].Text);
+      kol3.append($("<img>").attr('src',blogovi[i].Slika).addClass("blog_slika"));
+      red.append(kol1).append(kol2).append(kol3);
+      $("#blogovi").append(red);
     }
 
     $("button").click(function()

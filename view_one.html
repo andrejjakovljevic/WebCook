@@ -74,7 +74,7 @@
     </div>
     <div class="container">
       <div class="row">
-        <span class="col text fensi" id="bread_pregled_s"></span>
+        <span class="col text bred" id="bread_pregled_s"></span>
       </div>
       <div class="row">
         <div class="col-12" style="text-align: center;">
@@ -106,7 +106,14 @@
         <!--</div>-->
       </div>
       <hr style="border: 2px solid black;">
-      
+      <div class="row">
+        <div class="col">
+          <span class="text" id="vasa_slika"></span>
+          <input type="text" id="nova_slika"><br>
+          <button class="btn color_primary text" id="posalji1" onclick="addImage()"></button>
+        </div>
+      </div>
+      <hr style="border: 2px solid black;">
       <div class="row" style="margin-bottom: 30px;">
         <div class="col-6" style="margin: auto;">
           <h1 class="color_text1 text" id="komentari"></h1>
@@ -131,6 +138,9 @@
 </body>
 <script>
 
+  var recept;
+  var recept_id;
+  var niz_recepata;
   function addComment(){
     let radios = document.getElementsByName("zvezda");
     let ocena = 0;
@@ -163,6 +173,13 @@
     window.open("view_one.html", "_self");
   };
 
+  function addImage(){
+    let img_url = $("#nova_slika").val();
+    niz_recepata[recept_id].slike.push(img_url);
+    localStorage.setItem('niz_recepata', JSON.stringify(niz_recepata));
+    window.open("view_one.html", "_self");
+  }
+
   $(document).ready(function()
   {
     if(localStorage.getItem("korisnik")!=null)
@@ -172,11 +189,14 @@
     else
     {
       document.getElementById("vas_komentar").classList.remove("text");
+      $("#posalji1").attr("disabled", true);
+      $("#nova_slika").attr("disabled", true);
     }
     setupLanguage();
     let recipe = localStorage.getItem('show_recipe');
-    let niz_recepata = JSON.parse(localStorage.getItem('niz_recepata'));
-    let recept = niz_recepata[recipe];
+    niz_recepata = JSON.parse(localStorage.getItem('niz_recepata'));
+    recept = niz_recepata[recipe];
+    recept_id = recipe;
     $("#naslov_recepta").text(recept.naslov);
     $("#bread_pregled_s").append(" > "+recept.naslov);
     $("#text_recepta").text(recept.opis);
