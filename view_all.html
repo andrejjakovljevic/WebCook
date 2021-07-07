@@ -91,7 +91,7 @@
     </div>
     <div class="container">
       <div class="row">
-        <div class="col text bred" id="bread_pregled_s">
+        <div class="col-6 text bred" id="bread_pregled_s">
           
         </div>
       </div>
@@ -101,12 +101,15 @@
             </div>
         </div>
         <div class="row" style="margin-bottom: 30px;">
-          <div class="col-12">
+          <div class="col-6">
             <span class="text" id="sortiraj" style="font-size: 30px;"></span><span style="font-size: 30px;">: </span>
             <input type="radio" name="sort" value="naslov"> <span class="text" id="naslov" style="font-size: 20px;"></span> &nbsp; &nbsp;
-            <input type="radio" name="sort" value="duzina"> <span class="text" id="duzina" style="font-size: 20px;"></span> &nbsp; &nbsp;
             <input type="radio" name="sort" value="ocena"> <span class="text" id="ocena" style="font-size: 20px;"></span> &nbsp; &nbsp;
             <button class="btn color_primary text" id="sortiraj"></button>
+          </div>
+          <div class="col-6" style="text-align: right;">
+            <input type="image" src="glass.png" id="pretrazi" width="5%">
+            <input type="text" name="pretraga" id="p"> 
           </div>
         </div>
         <div class="row">
@@ -117,6 +120,7 @@
                   <th class="text" id="naslov"></th>
                   <th class="text" id="duzina"></th>
                   <th class="text" id="tip"></th>
+                  <th class="text" id="ocena"></th>
                   <th></th>
                 </tr>
               </thead>
@@ -134,9 +138,20 @@
     </div>
 </body>
 <script>
+  function getAvg(rec)
+  {
+    let avg=0;
+    for(let i = 0; i<rec.komentari.length; ++i)
+    {
+      avg += rec.komentari[i].ocena;
+    }
+    if (rec.komentari.length==0) return avg;
+    else return avg/=rec.komentari.length;
+  }
+
     $(document).ready(function()
     {
-        let button_string1 = "<button class='btn color_primary' id='dugmic"
+        let button_string1 = "<button class='btn color_primary prikaz' id='dugmic"
         let button_string2 = "'>";
         let button_string3 = "</button>";
         setupLanguage();
@@ -153,6 +168,11 @@
         niz_recepata = JSON.parse(localStorage.getItem('niz_recepata'));
         for (let i=0;i<niz_recepata.length;i++)
         {
+          if (localStorage.getItem('search')!=null)
+          {
+            var search = localStorage.getItem('search');
+            if (niz_recepata[i].naslov.indexOf(search)==-1) continue;
+          }
           let nes = niz_recepata[i];
           if(nes.grupa != localStorage.getItem('show'))
             continue;
@@ -164,6 +184,8 @@
           t2.text(nes.duzina);
           red.append(t2);
           let t3 = $("<td></td>");
+          let tocena = $("<td></td>");
+          tocena.text(Math.round(100*getAvg(niz_recepata[i]))/100);
           let tip=null;
           if (nes.grupa==1) tip=reci["predjelo"];
           else if (nes.grupa==2) tip=reci["glavno_jelo"];
@@ -171,19 +193,26 @@
           else if (nes.grupa==4) tip=reci["uzina"];
           t3.text(tip);
           red.append(t3);
+          red.append(tocena);
           let t4 = $("<td></td>");
           t4.append($(button_string1 + i + button_string2 + reci["pregled"] + button_string3));
           red.append(t4);
           $("#bodi").append(red);
         }
 
-        $("#dugmic").click(function()
+        $("#pretrazi").click(function()
+        {
+          localStorage.setItem('search',$("#p").val());
+          location.reload();
+        });
+
+        $("button.prikaz").click(function()
         {
           let id = $(this).attr('id');
           var res = parseInt(id.substring(6, id.length));
           localStorage.setItem('show_recipe', res);
           window.open("view_one.html","_self");
-        })
+        });
 
         $("button#sortiraj").click(function()
         {
@@ -197,7 +226,16 @@
             localStorage.setItem('niz_recepata',JSON.stringify(recepti));
             location.reload();
           }
-        })
+          if (po_cemu=='ocena')
+          {
+            recepti.sort(function(a,b){
+              return getAvg(b)-getAvg(a);
+            });
+            localStorage.setItem('niz_recepata',JSON.stringify(recepti));
+            location.reload();
+          }
+        });
+        localStorage.removeItem('search');
     })
 </script>
 </html>

@@ -13,7 +13,7 @@ let reci_sr =
     glavno_jelo: "Glavno jelo",
     desert: "Dezert",
     uzina: "Uzina",
-    foot: "Copyright 2021,  Andrej Jakovljević i Andrej Gobeljić, odsek za Softversko Inženjerstvo elektrotehničkog fakulteta u Beogradu",
+    foot: "Copyright 2021,  Andrej Jakovljevic i Andrej Gobeljic, odsek za Softversko Inženjerstvo elektrotehnickog fakulteta u Beogradu",
     naslov_login: "Molimo, prijavite se na sistem",
     korisnicko: "Korisnicko ime:",
     lozinka: "Lozinka:",
@@ -62,7 +62,9 @@ let reci_sr =
     bread_moj_nalog: "<a href='index.html'>Pocetna</a> > Moj nalog",
     bread_pregled_s: "<a href='index.html'>Pocetna</a> > <a href='view_all.html'>Pregled</a>",
     bread_dodaj: "<a href='index.html'>Pocetna</a> > Dodaj recept",
-    bread_o: "<a href='index.html'>Pocetna</a> > O nama"
+    bread_o: "<a href='index.html'>Pocetna</a> > O nama",
+    pedeef: "Preuzmite PDF",
+    pretrazi: "Pretrazi"
 };
 let reci_en = 
 {
@@ -79,7 +81,7 @@ let reci_en =
     glavno_jelo: "Main dish",
     desert: "Dessert",
     uzina: "Snack",
-    foot: "Copyright 2021,  Andrej Jakovljević i Andrej Gobeljić, Software Engineering Depratment, School of Electrical Engineering of Belgrade",
+    foot: "Copyright 2021,  Andrej Jakovljevic i Andrej Gobeljic, Software Engineering Depratment, School of Electrical Engineering of Belgrade",
     naslov_login: "Please, sign in",
     korisnicko: "Username:",
     lozinka: "Password:",
@@ -128,7 +130,9 @@ let reci_en =
     bread_moj_nalog: "<a href='index.html'>Start page</a> > My account",
     bread_pregled_s: "<a href='index.html'>Start page</a> > <a href='view_all.html'>View recipes</a>",
     bread_dodaj: "<a href='index.html'>Start page</a> > Add a recipe",
-    bread_o: "<a href='index.html'>Start page</a> > About"
+    bread_o: "<a href='index.html'>Start page</a> > About",
+    pedeef: "Download PDF",
+    pretrazi: "Search"
 }
 
 let reci=null;
@@ -159,7 +163,7 @@ let default_recepti=[
       "duzina":"50 min",
       "grupa":3,
       "tezina":1,
-      "opis":"Mikserom umutiti jaja, šećer i vanilin šećer. Dodati kiselo mleko, ulje i sjediniti mikserom. Zatim, umešati brašno pomešano sa praškom za pecivo i lagano umutiti mikserom kako bi se svi sastojci sjedinili.\nPleh obložiti pek-papirom i usuti pripremljenu smesu.\nPreko smese rasporediti maline. Peći u dobro zagrejanoj rerni na 180 stepeni 30 minuta.\nGotov kolač izvaditi iz rerne, prakriti čistom kuhinjskom krpom i ostavitu da se prohladi.\nKolač seći na parčad željene veličine, servirati i poslužiti.",
+      "opis":"Mikserom umutiti jaja, šecer i vanilin šecer. Dodati kiselo mleko, ulje i sjediniti mikserom. Zatim, umešati brašno pomešano sa praškom za pecivo i lagano umutiti mikserom kako bi se svi sastojci sjedinili.\nPleh obložiti pek-papirom i usuti pripremljenu smesu.\nPreko smese rasporediti maline. Peci u dobro zagrejanoj rerni na 180 stepeni 30 minuta.\nGotov kolac izvaditi iz rerne, prakriti cistom kuhinjskom krpom i ostavitu da se prohladi.\nKolac seci na parcad željene velicine, servirati i poslužiti.",
       "url":"https://www.youtube.com/embed/C6oLNdLmfPc",
       "autor":"Le Chef",
       "komentari":[
@@ -176,7 +180,7 @@ let default_recepti=[
       "duzina":"30 min",
       "grupa":3,
       "tezina":1,
-      "opis":"Višnje očistiti od koštica i staviti u cediljku da se ocede. U kalupe za mafine staviti papirne korpice (meni je izašlo 16 mafina). Rernu uključiti na 180 stepeni.\nU vanglicu staviti jaja i dodati mešavinu šećera i vanilinog šećera. Mikserom umutiti da se dobije kremasta, svetla, smesa. Dodati mleko i ulje. Mutiti najmanjom brzinom jedan minut. Na kraju ubaciti mešavinu brašna i praška za pecivo. Umutiti.\nU pripremljene korpice za mafine staviti testo da bude popunjena 1/2 korpica. Preko testa staviti po 3-4 višnje, pa prekriti testom toliko da korpice ostanu oko 3 mm prazne. Na isti način napuniti sve korpice.\nKalup sa korpicama staviti da se peče 20-25 minuta, odnosno dok mafini ne porumene (možete da isprobate i čačkalicom da li su pečeni). Pečene mafine ostaviti da se ohlade pa ih dekorisati po želji.",
+      "opis":"Višnje ocistiti od koštica i staviti u cediljku da se ocede. U kalupe za mafine staviti papirne korpice (meni je izašlo 16 mafina). Rernu ukljuciti na 180 stepeni.\nU vanglicu staviti jaja i dodati mešavinu šecera i vanilinog šecera. Mikserom umutiti da se dobije kremasta, svetla, smesa. Dodati mleko i ulje. Mutiti najmanjom brzinom jedan minut. Na kraju ubaciti mešavinu brašna i praška za pecivo. Umutiti.\nU pripremljene korpice za mafine staviti testo da bude popunjena 1/2 korpica. Preko testa staviti po 3-4 višnje, pa prekriti testom toliko da korpice ostanu oko 3 mm prazne. Na isti nacin napuniti sve korpice.\nKalup sa korpicama staviti da se pece 20-25 minuta, odnosno dok mafini ne porumene (možete da isprobate i cackalicom da li su peceni). Pecene mafine ostaviti da se ohlade pa ih dekorisati po želji.",
       "url":"",
       "autor":"Le Chef",
       "komentari":[
@@ -193,7 +197,7 @@ let default_recepti=[
         "duzina":"60 min",
         "grupa":2,
         "tezina":1,
-        "opis":' Krompir očistite i isecite na tanke listice. Crni i beli luk iseckajte sitno pa stavite da se dinsta, kada je luk dobio zlatnu boju dodajte meso pa dinstajte zajedno. Dodati bolognese sos (teglica) i dinstajte jos 5’ pa dodajte začine (biber, so, peršun, origano). U pleh ili vatrostalnu složite 1/3 krompira pa premazete besamel sosom, preko 1/2 fila pa narendate malo kačakavalja, ponovite postupak i na kraju zatvorite krompirom koji opet premazete bešamel sosom i pospete kačakvalj. Prekrite folijom i pecite 20ak minuta na 200C, a posle otkrite i još 20k bez folije.',
+        "opis":' Krompir ocistite i isecite na tanke listice. Crni i beli luk iseckajte sitno pa stavite da se dinsta, kada je luk dobio zlatnu boju dodajte meso pa dinstajte zajedno. Dodati bolognese sos (teglica) i dinstajte jos 5’ pa dodajte zacine (biber, so, peršun, origano). U pleh ili vatrostalnu složite 1/3 krompira pa premazete besamel sosom, preko 1/2 fila pa narendate malo kacakavalja, ponovite postupak i na kraju zatvorite krompirom koji opet premazete bešamel sosom i pospete kacakvalj. Prekrite folijom i pecite 20ak minuta na 200C, a posle otkrite i još 20k bez folije.',
         "url":"",
         "autor":"Le Chef",
         "komentari":[
@@ -211,11 +215,11 @@ let default_recepti=[
         "slike":["./KrompirLazanja.jpg"]
      },
      {
-        "naslov":"Posni đuveč sa začinima pa još i ljut",
+        "naslov":"Posni djuvec sa zacinima pa još i ljut",
         "duzina":"60 min",
         "grupa":2,
         "tezina":1,
-        "opis":'Prvo sam skuvala šolju graška i šolju boranije onako al dente, da ne bude prekuvano. U drugoj šerpi sam skuvala 2 krompira veća i šolju pirinča. Sve sam procedila i pomešala. Dodala sam pola tegle sataraša koji inače spremam kao zimnicu. Sataraš sadrži crni luk, beli luk, biber, paradajz i papriku i naravno začine sve uprženo na ulju. Dodala sam još jednu papriku iseckanu koju sam imala u zamrzivaču, oko dva paradajza koja sam takođe izvadila iz zamrzivača. Od začina sam stavila sve po ukusu biber, origano, bosiljak i majčinu dušicu. Naseckala još malo belog luka, dodala kašičicu karija, kašičicu ljute začinske mlevene paprike. Zaboravih, soli sam dodala po ukusu. Sve izručite u vatrostalni pekač, nalijte vodom i na 180 stepeni da se još ukrčka i zapeče malo odozgo. Imala sam i šargarepu ali sam potpuno zaboravila da je stavim. Tako... ja napravila đuveč prste da poližeš.',
+        "opis":'Prvo sam skuvala šolju graška i šolju boranije onako al dente, da ne bude prekuvano. U drugoj šerpi sam skuvala 2 krompira veca i šolju pirinca. Sve sam procedila i pomešala. Dodala sam pola tegle sataraša koji inace spremam kao zimnicu. Sataraš sadrži crni luk, beli luk, biber, paradajz i papriku i naravno zacine sve uprženo na ulju. Dodala sam još jednu papriku iseckanu koju sam imala u zamrzivacu, oko dva paradajza koja sam takodje izvadila iz zamrzivaca. Od zacina sam stavila sve po ukusu biber, origano, bosiljak i majcinu dušicu. Naseckala još malo belog luka, dodala kašicicu karija, kašicicu ljute zacinske mlevene paprike. Zaboravih, soli sam dodala po ukusu. Sve izrucite u vatrostalni pekac, nalijte vodom i na 180 stepeni da se još ukrcka i zapece malo odozgo. Imala sam i šargarepu ali sam potpuno zaboravila da je stavim. Tako... ja napravila djuvec prste da poližeš.',
         "url":"",
         "autor":"Le Chef",
         "komentari":[
@@ -237,7 +241,7 @@ let default_recepti=[
         "duzina":"40 min",
         "grupa":2,
         "tezina":1,
-        "opis":' Kada spremam posna jela volim da imaju što više povrća, tako je i ovo jedno od tih jela. Crni luk, koren peršuna, paškanata i celera sitno iseckati. Šargarepu iseći na polukrugove. Krompir iseći na kockice. Paradajz oljuštiti i iseći na kocke. Peršun i beli luk sitno iseckati. Ulje sipati u dublju posudu i staviti da se ugreje. Na zagrejano ulje ubaciti iseckani crni luk, šargarepu, koren peršuna, paškanata i celera. Promešati i na tihoj temperaturi dinstati 10-ak minuta. Ubaciti boraniju, grašak (boraniju i grašak sam sada koristila zamrznute, a na isti način spremam i kada je povrće sveže), krompir i paradajz. Promešati. Posuti sa alevom paprikom, promešati i naliti sa vrelom vodom. Poklopiti, ali tako da ima vrlo malo prostora da izlazi para i staviti na tihoj vatri da krčka. Kada voda provri posuti suvim biljnim začinom i biberom po ukusu. Nastaviti sa kuvanjem sve dok se čorbica ne zgusne. Nije potrebna zaprška, jer će čorbica da dobije gustinu od krompira. Pri kraju kuvanja ubaciti iseckani beli luk i peršun. Promešati i posle 1-2 minuta skloniti sa vatre. Poslužiti sa salatom po želji.',
+        "opis":' Kada spremam posna jela volim da imaju što više povrca, tako je i ovo jedno od tih jela. Crni luk, koren peršuna, paškanata i celera sitno iseckati. Šargarepu iseci na polukrugove. Krompir iseci na kockice. Paradajz oljuštiti i iseci na kocke. Peršun i beli luk sitno iseckati. Ulje sipati u dublju posudu i staviti da se ugreje. Na zagrejano ulje ubaciti iseckani crni luk, šargarepu, koren peršuna, paškanata i celera. Promešati i na tihoj temperaturi dinstati 10-ak minuta. Ubaciti boraniju, grašak (boraniju i grašak sam sada koristila zamrznute, a na isti nacin spremam i kada je povrce sveže), krompir i paradajz. Promešati. Posuti sa alevom paprikom, promešati i naliti sa vrelom vodom. Poklopiti, ali tako da ima vrlo malo prostora da izlazi para i staviti na tihoj vatri da krcka. Kada voda provri posuti suvim biljnim zacinom i biberom po ukusu. Nastaviti sa kuvanjem sve dok se corbica ne zgusne. Nije potrebna zaprška, jer ce corbica da dobije gustinu od krompira. Pri kraju kuvanja ubaciti iseckani beli luk i peršun. Promešati i posle 1-2 minuta skloniti sa vatre. Poslužiti sa salatom po želji.',
         "url":"https://www.youtube.com/embed/FtLPEjKII_c",
         "autor":"Le Chef",
         "komentari":[
@@ -255,11 +259,11 @@ let default_recepti=[
         "slike":["./PosnaBoranija.jpg"]
      },
      {
-        "naslov":"Štrudla sa makom, rogačem i višnjama",
+        "naslov":"Štrudla sa makom, rogacem i višnjama",
         "duzina":"80 min",
         "grupa":4,
         "tezina":1,
-        "opis":' U toplom mleku sa dodatkom kašičice šećera razmrviti kvasac, promešati i ostaviti da se kvasac aktivira. U vanglicu staviti brašno, dodati šećer, so i narendanu koricu limuna pa promešati. Zatim dodati jaje, otopljeni (i prohlađeni) maslac i pripremljeni kvasac. Zamesiti testo. Testo prebaciti na pobrašnjenu podlogu i uz minimalno dodavanje brašna umesiti ga da se dobije mekano, elastično testo. Testo odmah podeliti na dva jednaka dela. Od svakog dela oblikovati krug i staviti ih (posebno) u dublju posudu. Testo prekriti providnom folijom i ostaviti da naraste. Fil: Mleveni mak, rogač šećer i rum šećer ili rum staviti u odgovarajuću posudu. Promešati i preliti sa vrelim mlekom, ali ne sipati svu količinu mleka odjedanput. Mleko sipati sve dok ne dobijete gustu smesu koja može da se razmaže po testu. Ostaviti da se ohladi. Pleh veličine 30cm x 20cm premazati maslacem i dno prekriti pek papirom. Uzeti prvi deo testa, posuti brašnom radnu površinu i testo razviti u pravougaoni oblik debljine 0,5 cm, prema plehu u kome će se peći. Preko testa ravnomerno premazati polovinu fila i preko fila rasporediti polovinu višanja (višnje prvo posuti kašičicom gustina, promešati pa ih rasporediti preko fila). Uviti testo u rolat. Bočne stranice uvući malo unutar rolata da ne bi iscureo fil prilikom pečenja. Štrudlu pprebaciti u pripremljeni pleh. Na isti način napraviti i drugu štrudlu. Na sredini pleha, između štrudli, staviti savijeni list pek papira. Na taj način će te sprečiti da vam se štrudle zalepe jedna za drugu. Štrudle prekriti kuhinjskom krpom i ostaviti pola sata da narastu. Rernu zagrejati na 180 stepeni. Narasle štrudle premazati mešavinom žumanceta i mleka (ja sam ih posula i listićima badema) i staviti da se peču 30-35 minuta. Pri kraju pečenja, ako treba, prekriti štrudle alu folijom da površina ne potamni previše. Pečene štrudle (probati čačkalicom da li su pečene) pokriti kuhinjskom krpom i ostaviti ih u plehu 10 minuta. Zatim ih iz pleha prebaciti na kuhinjske krpe, umotati ih i ostaviti da se ohlade, pa ih iseći.',
+        "opis":' U toplom mleku sa dodatkom kašicice šecera razmrviti kvasac, promešati i ostaviti da se kvasac aktivira. U vanglicu staviti brašno, dodati šecer, so i narendanu koricu limuna pa promešati. Zatim dodati jaje, otopljeni (i prohladjeni) maslac i pripremljeni kvasac. Zamesiti testo. Testo prebaciti na pobrašnjenu podlogu i uz minimalno dodavanje brašna umesiti ga da se dobije mekano, elasticno testo. Testo odmah podeliti na dva jednaka dela. Od svakog dela oblikovati krug i staviti ih (posebno) u dublju posudu. Testo prekriti providnom folijom i ostaviti da naraste. Fil: Mleveni mak, rogac šecer i rum šecer ili rum staviti u odgovarajucu posudu. Promešati i preliti sa vrelim mlekom, ali ne sipati svu kolicinu mleka odjedanput. Mleko sipati sve dok ne dobijete gustu smesu koja može da se razmaže po testu. Ostaviti da se ohladi. Pleh velicine 30cm x 20cm premazati maslacem i dno prekriti pek papirom. Uzeti prvi deo testa, posuti brašnom radnu površinu i testo razviti u pravougaoni oblik debljine 0,5 cm, prema plehu u kome ce se peci. Preko testa ravnomerno premazati polovinu fila i preko fila rasporediti polovinu višanja (višnje prvo posuti kašicicom gustina, promešati pa ih rasporediti preko fila). Uviti testo u rolat. Bocne stranice uvuci malo unutar rolata da ne bi iscureo fil prilikom pecenja. Štrudlu pprebaciti u pripremljeni pleh. Na isti nacin napraviti i drugu štrudlu. Na sredini pleha, izmedju štrudli, staviti savijeni list pek papira. Na taj nacin ce te spreciti da vam se štrudle zalepe jedna za drugu. Štrudle prekriti kuhinjskom krpom i ostaviti pola sata da narastu. Rernu zagrejati na 180 stepeni. Narasle štrudle premazati mešavinom žumanceta i mleka (ja sam ih posula i listicima badema) i staviti da se pecu 30-35 minuta. Pri kraju pecenja, ako treba, prekriti štrudle alu folijom da površina ne potamni previše. Pecene štrudle (probati cackalicom da li su pecene) pokriti kuhinjskom krpom i ostaviti ih u plehu 10 minuta. Zatim ih iz pleha prebaciti na kuhinjske krpe, umotati ih i ostaviti da se ohlade, pa ih iseci.',
         "url":"",
         "autor":"Le Chef",
         "komentari":[
@@ -277,11 +281,11 @@ let default_recepti=[
         "slike":["./StrudlaSaMakom.jpg"]
      },
      {
-        "naslov":"Mekana pogača sa jogurtom",
+        "naslov":"Mekana pogaca sa jogurtom",
         "duzina":"30 min",
         "grupa":4,
         "tezina":1,
-        "opis":' U toploj vodi sa dodatkom jedne kašičice šećera razmrviti kvasac, promešati, i ostaviti da se aktivira. Tepsiju vel. 26cm podmazati maslacem ili dno tepsije prekriti pek papirom, a stranice premazati maslacem. U vanglicu staviti brašno, dodati kašičicu šećera i soli pa promešati. Zatim dodati belance, ulje, jogurt i pripremljeni kvasac. Zamesiti testo. Testo mesiti oko dva minuta, uz minimalno dodavanje brašna. Formirati od testa oblik lopte i prebaciti ga u tepsiju. Rukama ga ispretiskati i formirati pogaču. Prekriti tepsiju kkuhinjskom krpom i ostaviti da testo naraste, oko 30 minuta. Rernu zagrejati na 180 stepeni. Naraslu pogaču (ne treba puno da naraste) premazati mešavinom žumanceta i mleka. Površinu pogače izbockati čačkalicom da se ne bi odvojila korica posle pečenja i staviti da se peče 30-35 minuta. Ako treba pogaču prekriti alu folijom da zadrži lepu boju. Pečenu pogaču umotati u kuhinjsku krpu i ostaviti da se prohladi. Izlomite je, nikako se ne seče, i poslužite.',
+        "opis":' U toploj vodi sa dodatkom jedne kašicice šecera razmrviti kvasac, promešati, i ostaviti da se aktivira. Tepsiju vel. 26cm podmazati maslacem ili dno tepsije prekriti pek papirom, a stranice premazati maslacem. U vanglicu staviti brašno, dodati kašicicu šecera i soli pa promešati. Zatim dodati belance, ulje, jogurt i pripremljeni kvasac. Zamesiti testo. Testo mesiti oko dva minuta, uz minimalno dodavanje brašna. Formirati od testa oblik lopte i prebaciti ga u tepsiju. Rukama ga ispretiskati i formirati pogacu. Prekriti tepsiju kkuhinjskom krpom i ostaviti da testo naraste, oko 30 minuta. Rernu zagrejati na 180 stepeni. Naraslu pogacu (ne treba puno da naraste) premazati mešavinom žumanceta i mleka. Površinu pogace izbockati cackalicom da se ne bi odvojila korica posle pecenja i staviti da se pece 30-35 minuta. Ako treba pogacu prekriti alu folijom da zadrži lepu boju. Pecenu pogacu umotati u kuhinjsku krpu i ostaviti da se prohladi. Izlomite je, nikako se ne sece, i poslužite.',
         "url":"",
         "autor":"Le Chef",
         "komentari":[
@@ -303,7 +307,7 @@ let default_recepti=[
         "duzina":"90 min",
         "grupa":4,
         "tezina":1,
-        "opis":'Prvu koru naprskati uljem pa preko nje staviti drugu koru i nju poprskati uljem, zatim pečenku po kori, pošećeriti po ukusu (sa 2-3 kašike šećera) i vanil šećerom zatim preko posuti grizom(po 1 kašiku). Saviti koru sa obe strane malo oko 1 cm, pa uviti rolat i ređati u pleh obložen pek papirom. Peći na 200 C oko 30 minuta, dok ne porumeni. Prijatno!!!',
+        "opis":'Prvu koru naprskati uljem pa preko nje staviti drugu koru i nju poprskati uljem, zatim pecenku po kori, pošeceriti po ukusu (sa 2-3 kašike šecera) i vanil šecerom zatim preko posuti grizom(po 1 kašiku). Saviti koru sa obe strane malo oko 1 cm, pa uviti rolat i redjati u pleh obložen pek papirom. Peci na 200 C oko 30 minuta, dok ne porumeni. Prijatno!!!',
         "url":"",
         "autor":"Le Chef",
         "komentari":[
@@ -325,7 +329,7 @@ let default_recepti=[
       "duzina":"40 min",
       "grupa":3,
       "tezina":1,
-      "opis":'Danas smo bili na ručku kod roditelja moje snaje. I posle obilja raznih đakonija, kako to obično bude u Vojvodini, moja prija je kazala da će nas sada poslužiti sa jednim običnim, starinskim, kolačem sa višnjama. Pošto se meni taj njen "običan" kolač toliko dopao da sam odmah zatražila recept. I da se razumemo, ovaj kolač nisam ja pravila, samo prenosim recept. Morala sam da ga slikam u ovoj prekrasnoj bašti...\nPrvo očistiti višnje od koštica i staviti ih u cediljku da se dobro ocede. Pleh veličine (unutrašnje mere) 40 cm x 24cm dobro podmazati uljem i posuti brašnom. Rernu uključiti da se zagreje na 180 stepeni.\nOdvojiti belanca od žumanaca. Belanca staviti u dublju posudu i mutiti ih dok ne pobele. Zatim, postepeno, dodavati šećer i čvrsto ih umutiti. Dodavati jedno po jedno žumance i umutiti da se dobije penasta smesa. Zatim dodati mleko i ulje i mućenjem sjediniti. Na kraju ubaciti, iz 2-3 puta, mešavinu brašna i praška za pecivo. Odložiti mikser i brašno sjediniti sa smesom kašikom.\nSipati polovinu testa u pleh i staviti da se peče samo koliko da se testo malo stegne po površini. Izvaditi pleh i gusto poređati višnje. Preliti višnje drugom polovinom testa i vratiti da se kolač ispeče do kraja (oko 30 minuta ili probati čačkalicom da li je kolač pečen). Pečeni kolač ostaviti da se ohladi pa ga posuti šećerom u prahu. Iseći kolač na kocke i poslužiti.',
+      "opis":'Danas smo bili na rucku kod roditelja moje snaje. I posle obilja raznih djakonija, kako to obicno bude u Vojvodini, moja prija je kazala da ce nas sada poslužiti sa jednim obicnim, starinskim, kolacem sa višnjama. Pošto se meni taj njen "obican" kolac toliko dopao da sam odmah zatražila recept. I da se razumemo, ovaj kolac nisam ja pravila, samo prenosim recept. Morala sam da ga slikam u ovoj prekrasnoj bašti...\nPrvo ocistiti višnje od koštica i staviti ih u cediljku da se dobro ocede. Pleh velicine (unutrašnje mere) 40 cm x 24cm dobro podmazati uljem i posuti brašnom. Rernu ukljuciti da se zagreje na 180 stepeni.\nOdvojiti belanca od žumanaca. Belanca staviti u dublju posudu i mutiti ih dok ne pobele. Zatim, postepeno, dodavati šecer i cvrsto ih umutiti. Dodavati jedno po jedno žumance i umutiti da se dobije penasta smesa. Zatim dodati mleko i ulje i mucenjem sjediniti. Na kraju ubaciti, iz 2-3 puta, mešavinu brašna i praška za pecivo. Odložiti mikser i brašno sjediniti sa smesom kašikom.\nSipati polovinu testa u pleh i staviti da se pece samo koliko da se testo malo stegne po površini. Izvaditi pleh i gusto poredjati višnje. Preliti višnje drugom polovinom testa i vratiti da se kolac ispece do kraja (oko 30 minuta ili probati cackalicom da li je kolac pecen). Peceni kolac ostaviti da se ohladi pa ga posuti šecerom u prahu. Iseci kolac na kocke i poslužiti.',
       "url":"",
       "autor":"Le Chef",
       "komentari":[

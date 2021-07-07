@@ -13,6 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
     <script src="mapa.js"></script>
 </head>
 <style>
@@ -72,7 +73,7 @@
         </div>
       </div>
     </div>
-    <div class="container">
+    <div id="bodin" class="container">
       <div class="row">
         <span class="col text bred" id="bread_pregled_s"></span>
       </div>
@@ -107,10 +108,11 @@
       </div>
       <hr style="border: 2px solid black;">
       <div class="row">
-        <div class="col">
-          <span class="text" id="vasa_slika"></span>
-          <input type="text" id="nova_slika"><br>
+        <div class="col" style="text-align: center;">
+          <span class="text" id="vasa_slika"></span><hr>
+          <input type="text" id="nova_slika"><br><br>
           <button class="btn color_primary text" id="posalji1" onclick="addImage()"></button>
+          <button class="btn color_primary text" id="pedeef"></button>
         </div>
       </div>
       <hr style="border: 2px solid black;">
@@ -119,7 +121,7 @@
           <h1 class="color_text1 text" id="komentari"></h1>
         </div>
         <div class="col-6 text-right" style="margin: auto;">
-          <h1 id="score"></h1>
+          <h1><span class="text" id="ocena"></span>: <span id="score"></span></h1>
         </div>
       </div>
       <span class="text" id="vas_komentar"></span>
@@ -182,6 +184,13 @@
 
   $(document).ready(function()
   {
+    $('#pedeef').click(function () {
+      let doc = new jsPDF();
+      doc.text(60, 20, recept.naslov);
+      let opis = doc.splitTextToSize(recept.opis, 180);
+      doc.text(20, 40, opis);
+      doc.save(recept.naslov + '.pdf');
+    });
     if(localStorage.getItem("korisnik")!=null)
     {
       $("#novi_komentar").append($('<div class="col-10"><textarea id="text_komentara" style="width: 100%;"></textarea><button class="btn color_primary text" id="posalji" onclick="addComment()"></button></div><div class="col-2"><input type="radio" name="zvezda" value="1"> 1 <img src="./1_z.png" style="height: 20px; filter: brightness(0.7)"><br><input type="radio" name="zvezda" value="2"> 2 <img src="./2_z.png" style="height: 20px; filter: brightness(0.7)"><br><input type="radio" name="zvezda" value="3"> 3 <img src="./3_z.png" style="height: 20px; filter: brightness(0.7)"><br><input type="radio" name="zvezda" value="4"> 4 <img src="./4_z.png" style="height: 20px; filter: brightness(0.7)"><br><input type="radio" name="zvezda" value="5" checked> 5 <img src="./5_z.png" style="height: 20px; filter: brightness(0.7)"><br></div>'));
