@@ -54,10 +54,12 @@ let reci_sr =
     logout: "Odjavi se",
     vas_komentar: "Vas komentar",
     posalji: "Posalji",
-    bread_moj_nalog: "Pocetna > Moj nalog",
-    bread_pregled_s: "Pocetna > Pregled",
-    bread_dodaj: "Pocetna > Dodaj recept",
-    bread_o: "Pocetna > O nama"
+    posalji1: "Posalji",
+    vasa_slika: "Dodajte link ka vasoj slici",
+    bread_moj_nalog: "<a href='index.html'>Pocetna</a> > Moj nalog",
+    bread_pregled_s: "<a href='index.html'>Pocetna</a> > <a href='view_all.html'>Pregled</a>",
+    bread_dodaj: "<a href='index.html'>Pocetna</a> > Dodaj recept",
+    bread_o: "<a href='index.html'>Pocetna</a> > O nama"
 };
 let reci_en = 
 {
@@ -115,13 +117,36 @@ let reci_en =
     logout: "Logout",
     vas_komentar: "Your comment",
     posalji: "Send",
-    bread_moj_nalog: "Start page > My account",
-    bread_pregled_s: "Start page > View recipes",
-    bread_dodaj: "Start page > Add a recipe",
-    bread_o: "Start page > About"
+    posalji1: "Send",
+    vasa_slika: "Add url to your image",
+    bread_moj_nalog: "<a href='index.html'>Start page</a> > My account",
+    bread_pregled_s: "<a href='index.html'>Start page</a> > View recipes",
+    bread_dodaj: "<a href='index.html'>Start page</a> > Add a recipe",
+    bread_o: "<a href='index.html'>Start page</a> > About"
 }
 
 let reci=null;
+let blogovi=[
+    {
+        "Naslov": "Takmicenje u pecenju paprika u Przojnu",
+        "Text": "Prvo zvanicno takmicenje, licencirano od strane najvecih svetskih kuvara, je odrzano u Przojnu 19.05.2021, uz postovanje svih epidemioloskih mera.\
+        Pobednik je Smiljan Smiljanic iz Padeza sa osvojenih 3528 poena. Ovo takmicenje je odrzano u sklopu Paprikijade, gde su posetioci mogli\
+        da vide razne sorte paprika i specijalitete iz razlicitih krajeva sveta.",
+        "Slika": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnVAFhngTO-DkshiiQiYMWlEIh-EN8zB4VzQ&usqp=CAU"
+    },
+    {
+        "Naslov": "Svetski poznati kuvar posetio Srbiju!",
+        "Text": "Dzejmi Oliver posetio Novi Itebej ove srede i podelio svoja kulinarska umeca sa lokalnim stanovnistvom.",
+        "Slika": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxy5I4Pm3WyU7HNcz1IchuTmEcBs2-qV6-IA&usqp=CAU"
+    },
+    {
+        "Naslov": "Kurs pecenja paprika",
+        "Text": "Usled velikog interesovanja za paprike na ovogodisnjoj Paprikijadi u Przojnu, u saradnji sa nasim sajtom je organizovan\
+         kurs pecenja paprika za sve zainteresovane gastronome. Kurs ce biti potpuno besplatan, ali od ucesnika se ocekuje da sami obezbede svoje paprike. Prijave su na sledecem\
+         <a href = 'https://www.ajvar.com'>linku</a>.",
+        "Slika": "./pecene-paprike.jpg"
+    }
+];
 let default_recepti=[
     {
       "naslov":"Kolac sa malinama",
@@ -129,7 +154,7 @@ let default_recepti=[
       "grupa":3,
       "tezina":1,
       "opis":"Mikserom umutiti jaja, šećer i vanilin šećer. Dodati kiselo mleko, ulje i sjediniti mikserom. Zatim, umešati brašno pomešano sa praškom za pecivo i lagano umutiti mikserom kako bi se svi sastojci sjedinili.\nPleh obložiti pek-papirom i usuti pripremljenu smesu.\nPreko smese rasporediti maline. Peći u dobro zagrejanoj rerni na 180 stepeni 30 minuta.\nGotov kolač izvaditi iz rerne, prakriti čistom kuhinjskom krpom i ostavitu da se prohladi.\nKolač seći na parčad željene veličine, servirati i poslužiti.",
-      "url":"https://www.youtube.com/embed?v=C6oLNdLmfPc",
+      "url":"https://www.youtube.com/embed/C6oLNdLmfPc",
       "autor":"Le Chef",
       "komentari":[
           {
@@ -207,7 +232,7 @@ let default_recepti=[
         "grupa":2,
         "tezina":1,
         "opis":' Kada spremam posna jela volim da imaju što više povrća, tako je i ovo jedno od tih jela. Crni luk, koren peršuna, paškanata i celera sitno iseckati. Šargarepu iseći na polukrugove. Krompir iseći na kockice. Paradajz oljuštiti i iseći na kocke. Peršun i beli luk sitno iseckati. Ulje sipati u dublju posudu i staviti da se ugreje. Na zagrejano ulje ubaciti iseckani crni luk, šargarepu, koren peršuna, paškanata i celera. Promešati i na tihoj temperaturi dinstati 10-ak minuta. Ubaciti boraniju, grašak (boraniju i grašak sam sada koristila zamrznute, a na isti način spremam i kada je povrće sveže), krompir i paradajz. Promešati. Posuti sa alevom paprikom, promešati i naliti sa vrelom vodom. Poklopiti, ali tako da ima vrlo malo prostora da izlazi para i staviti na tihoj vatri da krčka. Kada voda provri posuti suvim biljnim začinom i biberom po ukusu. Nastaviti sa kuvanjem sve dok se čorbica ne zgusne. Nije potrebna zaprška, jer će čorbica da dobije gustinu od krompira. Pri kraju kuvanja ubaciti iseckani beli luk i peršun. Promešati i posle 1-2 minuta skloniti sa vatre. Poslužiti sa salatom po želji.',
-        "url":"",
+        "url":"https://www.youtube.com/embed/FtLPEjKII_c",
         "autor":"Le Chef",
         "komentari":[
           {
@@ -336,7 +361,7 @@ function setupLanguage()
     $(".text").each(function()
     {
         var id = $(this).attr('id');
-        $(this).text(reci[id]);
+        $(this).html(reci[id]);
     })
 }
 

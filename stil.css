@@ -74,3 +74,24 @@
 {
     font-family: Rage;
 }
+
+.bred a:link { text-decoration: none; color: #080F0F; }
+
+.bred a:visited { text-decoration: none; color: #080F0F;}
+
+.bred a:hover { text-decoration: none; color: #080F0F;}
+
+.bred a:active { text-decoration: none; color: #080F0F;}
+
+.blog_slika
+{
+    width: 100%;
+}
+
+.blog_naslov
+{
+    text-align: center;
+    font-weight: bold;
+    font-family: Rage;
+    font-size: large;
+}
