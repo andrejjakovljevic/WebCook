@@ -100,6 +100,15 @@
               <h1 class="text color_text1" id="naslov_svi_recepti"></h1><hr style="border: 2px solid black;">
             </div>
         </div>
+        <div class="row" style="margin-bottom: 30px;">
+          <div class="col-12">
+            <span class="text" id="sortiraj" style="font-size: 30px;"></span><span style="font-size: 30px;">: </span>
+            <input type="radio" name="sort" value="naslov"> <span class="text" id="naslov" style="font-size: 20px;"></span> &nbsp; &nbsp;
+            <input type="radio" name="sort" value="duzina"> <span class="text" id="duzina" style="font-size: 20px;"></span> &nbsp; &nbsp;
+            <input type="radio" name="sort" value="ocena"> <span class="text" id="ocena" style="font-size: 20px;"></span> &nbsp; &nbsp;
+            <button class="btn color_primary text" id="sortiraj"></button>
+          </div>
+        </div>
         <div class="row">
           <div class="col-12">
             <table class="table table-striped" id="tabelica">
@@ -168,12 +177,26 @@
           $("#bodi").append(red);
         }
 
-        $("button").click(function()
+        $("#dugmic").click(function()
         {
           let id = $(this).attr('id');
           var res = parseInt(id.substring(6, id.length));
           localStorage.setItem('show_recipe', res);
           window.open("view_one.html","_self");
+        })
+
+        $("button#sortiraj").click(function()
+        {
+          var recepti = JSON.parse(localStorage.getItem('niz_recepata'));
+          var po_cemu = $('input[name="sort"]:checked').val();
+          if (po_cemu=='naslov')
+          {
+            recepti.sort(function(a,b){
+              return a.naslov.localeCompare(b.naslov);
+            });
+            localStorage.setItem('niz_recepata',JSON.stringify(recepti));
+            location.reload();
+          }
         })
     })
 </script>

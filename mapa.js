@@ -59,7 +59,8 @@ let reci_sr =
     bread_dodaj: "Pocetna > Dodaj recept",
     bread_o: "Pocetna > O nama",
     naslov_moji_komentari: "Moji komentari",
-    ocena: "Ocena"
+    ocena: "Ocena",
+    sortiraj: "Sortiraj"
 };
 let reci_en = 
 {
@@ -122,7 +123,8 @@ let reci_en =
     bread_dodaj: "Start page > Add a recipe",
     bread_o: "Start page > About",
     naslov_moji_komentari: "My comments",
-    ocena: "Grade"
+    ocena: "Grade",
+    sortiraj: "Sort"
 }
 
 let reci=null;
