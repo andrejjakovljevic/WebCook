@@ -64,7 +64,8 @@ let reci_sr =
     bread_dodaj: "<a href='index.html'>Pocetna</a> > Dodaj recept",
     bread_o: "<a href='index.html'>Pocetna</a> > O nama",
     pedeef: "Preuzmite PDF",
-    pretrazi: "Pretrazi"
+    pretrazi: "Pretrazi",
+    tezinica: "Tezina"
 };
 let reci_en = 
 {
@@ -132,7 +133,8 @@ let reci_en =
     bread_dodaj: "<a href='index.html'>Start page</a> > Add a recipe",
     bread_o: "<a href='index.html'>Start page</a> > About",
     pedeef: "Download PDF",
-    pretrazi: "Search"
+    pretrazi: "Search",
+    tezinica: "Difficulty"
 }
 
 let reci=null;
@@ -154,7 +156,7 @@ let blogovi=[
         "Text": "Usled velikog interesovanja za paprike na ovogodisnjoj Paprikijadi u Przojnu, u saradnji sa nasim sajtom je organizovan\
          kurs pecenja paprika za sve zainteresovane gastronome. Kurs ce biti potpuno besplatan, ali od ucesnika se ocekuje da sami obezbede svoje paprike. Prijave su na sledecem\
          <a href = 'https://www.ajvar.com'>linku</a>.",
-        "Slika": "./pecene-paprike.jpg"
+        "Slika": "slike/pecene-paprike.jpg"
     }
 ];
 let default_recepti=[
@@ -173,7 +175,7 @@ let default_recepti=[
               "ocena": 5
           }
       ],
-      "slike":["./KolacSaMalinama.jpg"]
+      "slike":["slike/KolacSaMalinama.jpg"]
     },
     {
       "naslov":"Mafini sa visnjama",
@@ -190,13 +192,13 @@ let default_recepti=[
               "ocena": 5
           }
       ],
-      "slike":["./MafiniSaVisnjama.jpg"]
+      "slike":["slike/MafiniSaVisnjama.jpg"]
      },
      {
         "naslov":"Krompir lazanja",
         "duzina":"60 min",
         "grupa":2,
-        "tezina":1,
+        "tezina":5,
         "opis":' Krompir ocistite i isecite na tanke listice. Crni i beli luk iseckajte sitno pa stavite da se dinsta, kada je luk dobio zlatnu boju dodajte meso pa dinstajte zajedno. Dodati bolognese sos (teglica) i dinstajte jos 5’ pa dodajte zacine (biber, so, peršun, origano). U pleh ili vatrostalnu složite 1/3 krompira pa premazete besamel sosom, preko 1/2 fila pa narendate malo kacakavalja, ponovite postupak i na kraju zatvorite krompirom koji opet premazete bešamel sosom i pospete kacakvalj. Prekrite folijom i pecite 20ak minuta na 200C, a posle otkrite i još 20k bez folije.',
         "url":"",
         "autor":"Le Chef",
@@ -212,7 +214,7 @@ let default_recepti=[
               "ocena": 4
           }
         ],
-        "slike":["./KrompirLazanja.jpg"]
+        "slike":["slike/KrompirLazanja.jpg"]
      },
      {
         "naslov":"Posni djuvec sa zacinima pa još i ljut",
@@ -234,7 +236,7 @@ let default_recepti=[
               "ocena": 4
           }
         ],
-        "slike":["./Djuvec.jpg"]
+        "slike":["slike/Djuvec.jpg"]
      },
      {
         "naslov":"Posna boranija sa graškom",
@@ -256,7 +258,7 @@ let default_recepti=[
               "ocena": 4
           }
         ],
-        "slike":["./PosnaBoranija.jpg"]
+        "slike":["slike/PosnaBoranija.jpg"]
      },
      {
         "naslov":"Štrudla sa makom, rogacem i višnjama",
@@ -278,7 +280,7 @@ let default_recepti=[
               "ocena": 4
           }
         ],
-        "slike":["./StrudlaSaMakom.jpg"]
+        "slike":["slike/StrudlaSaMakom.jpg"]
      },
      {
         "naslov":"Mekana pogaca sa jogurtom",
@@ -300,7 +302,7 @@ let default_recepti=[
               "ocena": 4
           }
         ],
-        "slike":["./MekanaPogaca.jpg"]
+        "slike":["slike/MekanaPogaca.jpg"]
      },
      {
         "naslov":"Bakina pita sa pecenkom",
@@ -322,7 +324,7 @@ let default_recepti=[
               "ocena": 4
           }
         ],
-        "slike":["./BakinaPita.jpg"]
+        "slike":["slike/BakinaPita.jpg"]
      },
      {
       "naslov":"Milankin kolac sa visnjama",
@@ -344,7 +346,7 @@ let default_recepti=[
             "ocena": 4
         }
       ],
-      "slike":["./MilankinKolacSaVisnjama.jpg"]
+      "slike":["slike/MilankinKolacSaVisnjama.jpg"]
      }
   ]
 
