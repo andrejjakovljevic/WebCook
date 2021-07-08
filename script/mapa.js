@@ -347,7 +347,31 @@ let default_recepti=[
         }
       ],
       "slike":["slike/MilankinKolacSaVisnjama.jpg"]
-     }
+     },
+     {
+        "naslov":"Salata od jaja",
+        "duzina":"30 min",
+        "grupa":1,
+        "tezina":1,
+        "opis":'Krompir i jaja se skuvaju i oljušte se. Krompir se izgnjeci sa 2-3 kašike maslinovog ulja, solju, biberom i belim lukom, istucanim u pastu. Dobijeni pire može i da ne bude savršeno gladak. Od njega se oblikuju bombice slicne cufrticama i poređaju se u tanjir za serviranje. Preko svake bombice od krompira se stavljaju snopovi tako korisne i sveže salate Valerijane, prethodno zacinjena sa malo soli, maslinovog ulja i soka od limuna, ako cete servirati salatu od jaja odmah. Odozgo se stavljaju skuvana i na cetvrtine isecena jaja i između njih kriške avokada. Posipa se maslinovim uljem, sokom od limuna i lepa zdrava salata se servira dok je sveža. ',
+        "url":"",
+        "autor":"Le Chef",
+        "komentari":[
+        ],
+        "slike":["slike/salataodjaja.jpeg"]
+       },
+       {
+        "naslov":"Losos salata sa balzamiko prelivom",
+        "duzina":"1 h",
+        "grupa":1,
+        "tezina":3,
+        "opis":'Sipajte sve sastojke za preliv u manju teglicu pa promućkajte tako da se smesa ujednači.Losos stavite u alu foliju, posolite, pobiberite i zatvorite folijom. Pecite u zagrejanoj rerni na 200 stepeni oko 15-20 minuta. Važno je da se ne prepeče jer onda postane suv. U veliku činiju sipajte pola pakovanja Mediteranea salate, baby mix salatu, prepolovljen cherry paradajz i avokado iseckan na kriške. Salati dodajte losos i prelijte salatu pripremljenim dresingom. Losos salata treba da se servira posuta prepečenim pinjolima.',
+        "url":"",
+        "autor":"Le Chef",
+        "komentari":[
+        ],
+        "slike":["slike/Losos-salata.jpg"]
+       }
   ]
 
 function setupLanguage()
