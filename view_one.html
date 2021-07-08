@@ -234,7 +234,10 @@
       $("#komenc").append($(string1+string2+string3+string4+string5+string6+string7+string8));
       avg += recept.komentari[i].ocena;
     }
-    avg /= recept.komentari.length;
+    if(recept.komentari.length == 0)
+      avg = 0;
+    else
+      avg /= recept.komentari.length;
     $("#score").append(Math.round(avg*100)/100);
     let vid1 = '<iframe width="50%" height="315" src="';
     let vid2 = '"></iframe><hr style="border: 2px solid black;">';
