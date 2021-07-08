@@ -371,6 +371,18 @@ let default_recepti=[
         "komentari":[
         ],
         "slike":["slike/Losos-salata.jpg"]
+       },
+       {
+        "naslov":"Rebrasti cips",
+        "duzina":"1 h",
+        "grupa":1,
+        "tezina":3,
+        "opis":'Krompir oljuštituli, oprati i iseći rebrastom seckalicom. Iseckan krompir staviti u šerpu, naliti vodom i ostaviti da otstoji dva sata kako bi izašao skrob. Krompir ocediti, rasporediti na čistu kuhinjsku krpu, prekriti drugom čistom kuhunjskom krpom i ostaviti da se prosuši. Pleh obložiti pek-papirom, premazati uljem i rasporediti krompir. Preliti uljem i peći u dobro zagrejanoj rerni na 200 stepeni 15 minuta (zavisno od rerne). Gotov čips izvaditi iz rerne, posoluti po ukusu i poslužiti. U vreme pripreme nije upisano vreme koje je potrebno da krompor otstoji u vodi (dva sata).',
+        "url":"",
+        "autor":"Le Chef",
+        "komentari":[
+        ],
+        "slike":["slike/RebrastiCips.jpg"]
        }
   ]
 
